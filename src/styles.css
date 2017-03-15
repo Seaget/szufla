@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: url('images/field-background.jpg');
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#mainContainer {
+    color: white;
+    background-color: rgba(0, 0, 0, .85);
+    width: 60%;
+    min-width: 500px;
+    margin: auto;
+}
