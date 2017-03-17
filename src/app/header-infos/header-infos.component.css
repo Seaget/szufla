@@ -1,0 +1,23 @@
+#act-date {
+    float: left;
+    width: 20%;
+    font-family: cursive;
+    font-size: 12px;
+}
+
+#header-sign-or-reg {
+    display: inline-block;
+    width: 80%;
+    text-align: right;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.sign-reg-link {
+    color: greenyellow;
+    border: 1px solid gray;
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 13px;
+}

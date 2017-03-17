@@ -1,7 +1,12 @@
+#headerInfos {
+    padding: 5px 15px;
+}
+
 #mainMenu {
     font-family: Arial, Helvetica, sans-serif;
     background: url('./../images/menu-background.jpg');
     background-position: left 30% top 30%;
     background-size: cover;
     padding: 10px 0px 10px 10px;
+    box-shadow: 0px 5px 7px 0px yellowgreen;
 }
