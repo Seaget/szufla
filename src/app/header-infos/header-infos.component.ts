@@ -13,4 +13,9 @@ export class HeaderInfosComponent implements OnInit {
   ngOnInit() {
   }
 
+  public showSignInPanel() {
+    let item = document.getElementById("sign-in");
+    item.style.display = 'block';
+  }
+
 }

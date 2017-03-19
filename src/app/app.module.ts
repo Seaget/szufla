@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { HeaderInfosComponent } from './header-infos/header-infos.component';
+import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
-    HeaderInfosComponent
+    HeaderInfosComponent,
+    SignInFormComponent
   ],
   imports: [
     BrowserModule,
