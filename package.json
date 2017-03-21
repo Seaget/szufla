@@ -24,7 +24,8 @@
     "jquery": "^3.2.0",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+    "mysql": "^2.13.0"
   },
   "devDependencies": {
     "angular-cli": "1.0.0-beta.30",
@@ -42,6 +43,7 @@
     "protractor": "~4.0.13",
     "ts-node": "1.2.1",
     "tslint": "^4.3.0",
-    "typescript": "~2.0.3"
+    "typescript": "~2.0.3",
+    "mysql-promise": "^4.1.0"
   }
 }

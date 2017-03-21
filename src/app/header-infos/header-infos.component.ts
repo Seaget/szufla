@@ -7,15 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderInfosComponent implements OnInit {
   actDate : Date = new Date();
+  public loggedUser:boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+    if(localStorage.getItem('loggedUser')) {
+      this.loggedUser = true;
+    } else {
+      this.loggedUser = false;
+    }
   }
 
   public showSignInPanel() {
     let item = document.getElementById("sign-in");
     item.style.display = 'block';
+  }
+
+  public showUserPanel() {
+    localStorage.removeItem('loggedUser');
+    location.reload();
   }
 
 }

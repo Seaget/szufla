@@ -3,7 +3,12 @@
   {{actDate | date: 'yyyy MMMM dd.'}}
 </div>
 <div id="header-sign-or-reg">
-  <span class="sign-reg-link"><a (click)="showSignInPanel($event)">Sign In</a></span> or <span class="sign-reg-link"><a>Register</a></span>
+  <span *ngIf="!loggedUser">
+    <span class="sign-reg-link"><a (click)="showSignInPanel($event)">Sign In</a></span> or <span class="sign-reg-link"><a>Register</a></span>
+  </span>
+  <span *ngIf="loggedUser">
+    <span class="sign-reg-link"><a (click)="showUserPanel()">Sign Out</a></span>
+  </span>
 </div>
 
 <app-sign-in-form></app-sign-in-form>
