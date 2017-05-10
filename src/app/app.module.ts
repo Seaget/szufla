@@ -4,16 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
-import { HeaderInfosComponent } from './header-infos/header-infos.component';
-import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
+import { VerticalMenuComponent } from './vertical-menu/vertical-menu.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainMenuComponent,
-    HeaderInfosComponent,
-    SignInFormComponent
+    VerticalMenuComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,
