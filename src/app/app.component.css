@@ -130,3 +130,36 @@
         background-position-x: -170px;
     }
 }
+
+.promo {
+    position: relative;
+    top: 50%;
+    left: 30%;
+    text-align: right;
+    width: 60%;
+    color: #fff;
+}
+
+.promo h4 {
+    padding: 0 20px;
+    font-size: 62px;
+    text-transform: uppercase;
+    line-height: 91px;
+    display: inline;
+    font-size: 50px;
+}
+
+.promo-main span, .promo-sub span {
+    color: #ffc722;
+}
+
+.promo-main {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+}
+
+.promo-sub {
+    font-size: 30px;
+    line-height: 20px;
+    font-size: 30px;
+}
