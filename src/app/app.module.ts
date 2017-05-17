@@ -6,12 +6,24 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { VerticalMenuComponent } from './vertical-menu/vertical-menu.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { ShortNewsComponent } from './short-news/short-news.component';
+import { ShortSzuflaComponent } from './short-szufla/short-szufla.component';
+import { ShortTeamMembersComponent } from './short-team-members/short-team-members.component';
+import { ShortEventsComponent } from './short-events/short-events.component';
+import { ShortGaleryComponent } from './short-galery/short-galery.component';
+import { ShortContactsComponent } from './short-contacts/short-contacts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VerticalMenuComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    ShortNewsComponent,
+    ShortSzuflaComponent,
+    ShortTeamMembersComponent,
+    ShortEventsComponent,
+    ShortGaleryComponent,
+    ShortContactsComponent
   ],
   imports: [
     BrowserModule,

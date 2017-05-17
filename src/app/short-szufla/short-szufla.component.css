@@ -1,0 +1,47 @@
+.short-szufla-box {
+    background: url('/images/shorts/short-szufla-background.jpg') 50% 50%;
+    height: 50vh;
+}
+
+.short-szufla-column-first {
+    width: 50%;
+    float: left;
+}
+
+.short-szufla-column-second {
+    width: 50%;
+    float: left;
+}
+
+.va-about-wrap:before {
+    content: '';
+    position: relative;
+    opacity: 0.85;
+    left: -141.75%;
+    z-index: 0;
+    -webkit-transform: skew(-33deg);
+    transform: skew(-33deg);
+    display: block;
+    background: #ffc722;
+    height: 50vh;
+    width: 120vw;
+}
+
+.va-about-image-wrap:before {
+    content: '';
+    position: relative;
+    opacity: 0.95;
+    left: 0%;
+    z-index: 0;
+    -webkit-transform: skew(-33deg);
+    transform: skew(-33deg);
+    display: block;
+    background: #363533;
+    height: 50vh;
+    width: 120vw;
+}
+
+.title {
+    position: relative;
+    top: -45vh;
+}
