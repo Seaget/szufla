@@ -142,7 +142,6 @@
 
 .promo h4 {
     padding: 0 20px;
-    font-size: 62px;
     text-transform: uppercase;
     line-height: 91px;
     display: inline;
@@ -161,5 +160,4 @@
 .promo-sub {
     font-size: 30px;
     line-height: 20px;
-    font-size: 30px;
 }
