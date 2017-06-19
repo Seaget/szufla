@@ -1,0 +1,35 @@
+.wrapper {
+    width: 25%;
+    float: left;
+    padding: 10px 30px;
+    text-align: center;
+}
+
+.profile {
+    overflow: hidden;
+    height: 250px;
+}
+
+.profile img {
+    height: 100%;
+}
+
+.member-info {
+    padding: 9px 0 0 14px;
+    border: solid #f5f5f5;
+    border-width: 0 1px 1px 1px;
+    background: #fff;
+}
+
+.s-member-name {
+    margin: 0;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.s-member-position {
+    padding: 3px 0 12px 0;
+    font-size: 16px;
+    color: #919191;
+    text-transform: uppercase;
+}

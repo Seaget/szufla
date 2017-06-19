@@ -12,6 +12,7 @@ import { ShortTeamMembersComponent } from './short-team-members/short-team-membe
 import { ShortEventsComponent } from './short-events/short-events.component';
 import { ShortGaleryComponent } from './short-galery/short-galery.component';
 import { ShortContactsComponent } from './short-contacts/short-contacts.component';
+import { ShortMembersDataComponent } from './short-members-data/short-members-data.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ShortContactsComponent } from './short-contacts/short-contacts.componen
     ShortTeamMembersComponent,
     ShortEventsComponent,
     ShortGaleryComponent,
-    ShortContactsComponent
+    ShortContactsComponent,
+    ShortMembersDataComponent
   ],
   imports: [
     BrowserModule,
