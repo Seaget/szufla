@@ -1,6 +1,6 @@
 .s-news-container {
     width: 100%;
-    background-image: url(../images/shorts/news-background.jpg);
+    background-image: url(./assets/images/shorts/news-background.jpg);
     background-position-y: -135%;
     background-repeat: no-repeat;
 }

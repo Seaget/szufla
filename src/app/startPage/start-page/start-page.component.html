@@ -1,0 +1,42 @@
+<div id="mainContainer">
+    <div id="menu">
+        <app-vertical-menu></app-vertical-menu>
+    </div>
+    <div id="content">
+        <div class="header">
+            <div class="toolbar-placeholder">
+            </div>
+            <div class="menu-top-placeholder">
+                <div class="menu-placeholder">
+                    <a class="teamName-header" href="#">
+                        <img src="./assets/images/szuflaLogo.png" alt="logo" title="logo">
+                        <span>Szufla</span>
+                    </a>
+                    <app-navigation-bar></app-navigation-bar>
+                    <div id="menuActivate"><a href="#menu" (click)="myfunc()">&#9776;</a></div>
+                </div>
+            </div>
+            <div class="promo">
+                <h4>
+                    <span class="promo-main">
+                        A te sportod:
+                        <span>ultimate</span>
+                    </span>
+                    <div class="promo-sub">
+                        Dobj!
+                        <span>Fuss!</span>
+                        Játssz!
+                    </div>
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+<app-short-news></app-short-news>
+<app-short-szufla></app-short-szufla>
+<app-short-team-members></app-short-team-members>
+<!--
+<app-short-events></app-short-events>
+<app-short-galery></app-short-galery>
+<app-short-contacts></app-short-contacts>
+-->

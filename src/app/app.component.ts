@@ -7,13 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
-
-  myfunc() {
-      var a = document.getElementById('menu');
-      if(a.classList.contains('responsive')) {
-          a.classList.remove('responsive');
-      } else {
-          a.classList.add('responsive');
-      }
-  }
 }

@@ -1,10 +1,10 @@
 <div id="wrapper">
     <ul id="nav">
-        <li><a class="hsubs sliding-u-l-r" href="#">Hírek</a></li>
-        <li><a class="hsubs sliding-u-l-r" href="#">Edzés</a>
+        <li><a class="hsubs sliding-u-l-r" [routerLink]="['/news']" [routerLinkActive]="['active']">Hírek</a></li>
+        <li><a class="hsubs sliding-u-l-r" [routerLink]="['/practices/outdoorPractice']">Edzés</a>
             <ul class="subs">
-                <li><a class="sliding-u-l-r" href="#">Szabadtéri</a></li>
-                <li><a class="sliding-u-l-r" href="#">Terem</a></li>
+                <li><a class="sliding-u-l-r" [routerLink]="['/practices/outdoorPractice']" [routerLinkActive]="['active']">Szabadtéri</a></li>
+                <li><a class="sliding-u-l-r" [routerLink]="['/practices/indoorPractice']" [routerLinkActive]="['active']">Terem</a></li>
             </ul>
         </li>
         <li><a class="hsubs sliding-u-l-r" href="#">Csapat</a>
@@ -23,6 +23,6 @@
                 <li><a class="sliding-u-l-r" href="#">Versenyek</a></li>
             </ul>
         </li>
-        <li><a class="hsubs sliding-u-l-r" href="#">Kapcsolat</a></li>
+        <li><a class="hsubs sliding-u-l-r"  [routerLink]="['/contact']" [routerLinkActive]="['active']">Kapcsolat</a></li>
     </ul>
 <div>
