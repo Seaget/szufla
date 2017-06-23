@@ -1,0 +1,49 @@
+.contactData {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 2em;
+}
+
+.contactLogo {
+    max-width: 300px;
+    float: left;
+}
+
+.teamName {
+    font-size: 2em;
+    padding: 0.6em;
+    line-height: normal;
+}
+
+.teamName span {
+    display: block;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.tableContactInfo {
+    width: 100%;
+}
+
+.tableContactLogo {
+    width: 33%;
+}
+
+.officialContacts {
+    font-size: 15px;
+}
+
+.ui.icon.header .icon {
+    font-size: 20px;
+}
+
+.email {
+    margin-bottom: 1em;
+}
+
+a {
+    color: black;
+    cursor: pointer;
+}
