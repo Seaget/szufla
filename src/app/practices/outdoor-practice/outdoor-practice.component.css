@@ -1,0 +1,41 @@
+.practiceFrame {
+    width: 100%;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+.practiceForWho {
+    max-width: 1050px;
+    margin: 0em auto 5em;
+    display: table;
+}
+
+.card {
+    width: 33%;
+    float: left;
+}
+
+.cardContent {
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+img {
+    width: 10em;
+    padding: 4em 2em 1em;
+}
+
+.practiceMap {
+    display: block;
+}
+
+agm-map {
+  height: 70vh;
+}
+
+.practiceInfo {
+    width: 100%;
+    height: 100vh;
+    background-color: pink;
+}

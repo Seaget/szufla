@@ -37,6 +37,7 @@
 
 .ui.icon.header .icon {
     font-size: 20px;
+    width: 4%;
 }
 
 .email {
@@ -46,4 +47,8 @@
 a {
     color: black;
     cursor: pointer;
+}
+
+.facebookLink:hover {
+    color: #ffc722;
 }

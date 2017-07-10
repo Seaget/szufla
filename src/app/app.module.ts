@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy} from '@angular/common';
 
+import { AgmCoreModule } from '@agm/core';
+
 import { AppComponent } from './app.component';
 import { VerticalMenuComponent } from './vertical-menu/vertical-menu.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
@@ -62,7 +64,10 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes) // <-- routes
+    RouterModule.forRoot(routes), // <-- routes
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB35US8O5Fakotbr2WtYvoxP6T9UcuSJDY'
+    })
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "hu-HU" },

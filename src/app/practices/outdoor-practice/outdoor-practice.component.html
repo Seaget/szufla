@@ -1,6 +1,52 @@
 <div class="menuTitle">
   Szabadtéri Edzések
 </div>
-<p>
-  outdoor-practice works!
-</p>
+<div class="practiceFrame">
+  <div class="practiceForWho">
+    <div class="card">
+      <div class="cardContent">
+        <div class="image">
+          <img src="./assets/images/practice/forWhoAge.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            6 és 60 éves kor között bárkinek ajánlott minimális kezdeti kondícióval.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardContent">
+        <div class="image">
+          <img src="./assets/images/practice/forWhoGroup.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            Oktatás létszámtól függően, akár több csoportban.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardContent">
+        <div class="image">
+          <img src="./assets/images/practice/forWhoSuit.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            <div>Ajánlott öltözet:</div>stoplis cipő, bővebb rövidnadrág és póló.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="practiceMap">
+    <div>
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [scrollwheel]=false>
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
+  <div class="practiceInfo">
+  </div>
+</div>

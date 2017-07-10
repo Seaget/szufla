@@ -1,5 +1,5 @@
 .short-szufla-box {
-    background: url('./assets/images/shorts/short-szufla-background.jpg') 50% 50%;
+    background: url('../../../assets/images/shorts/short-szufla-background.jpg') 50% 50%;
     height: 50vh;
 }
 
@@ -84,7 +84,7 @@
 }
 
 .short-team-image {
-    background-image: url("./assets/images/shorts/short-szufla-background.jpg");
+    background-image: url("../../../assets/images/shorts/short-szufla-background.jpg");
     display: flex;
     width: 33vmax;
     height: 19vmax;
