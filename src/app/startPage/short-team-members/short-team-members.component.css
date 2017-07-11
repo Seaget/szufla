@@ -55,6 +55,9 @@ a {
     color: #fff;
     background: #363533;
 }
+.s-members-container {
+    display: table;
+}
 
 .s-members {
     max-width: 1350px;

@@ -1,12 +1,13 @@
 <div class="menuTitle">
   Szabadtéri Edzések
 </div>
+
 <div class="practiceFrame">
   <div class="practiceForWho">
     <div class="card">
       <div class="cardContent">
         <div class="image">
-          <img src="./assets/images/practice/forWhoAge.jpg">
+          <img class="img-icons" src="./assets/images/practice/forWhoAge.jpg">
         </div>
         <div class="content">
           <div class="description">
@@ -15,10 +16,11 @@
         </div>
       </div>
     </div>
+
     <div class="card">
       <div class="cardContent">
         <div class="image">
-          <img src="./assets/images/practice/forWhoGroup.jpg">
+          <img class="img-icons" src="./assets/images/practice/forWhoGroup.jpg">
         </div>
         <div class="content">
           <div class="description">
@@ -27,10 +29,11 @@
         </div>
       </div>
     </div>
+
     <div class="card">
       <div class="cardContent">
         <div class="image">
-          <img src="./assets/images/practice/forWhoSuit.jpg">
+          <img class="img-icons" src="./assets/images/practice/forWhoSuit.jpg">
         </div>
         <div class="content">
           <div class="description">
@@ -40,6 +43,7 @@
       </div>
     </div>
   </div>
+
   <div class="practiceMap">
     <div>
       <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [scrollwheel]=false>
@@ -47,6 +51,30 @@
       </agm-map>
     </div>
   </div>
+
   <div class="practiceInfo">
+    <div class="practiceDetailsContainer">
+      <div class="practiceDetails">
+        <div class="trainingInfo">
+          <span class="trainingText"><span class="bold white">Szeged</span></span>
+          <div class="practiceDetailsParts">
+            <span class="trainingText"><span class="bold white">Kertész utca 3.</span></span>
+            <span class="trainingText"><span class="bold white">Sportpálya</span></span>
+            <br/>
+            <span class="trainingText"><span class="bold white">Edző:</span> Keszi-Petik János</span>
+            <span class="trainingText"><span class="bold white">Segédedzők:</span> Boross Gábor, Rózsa Tibor</span>
+            <span class="trainingText"><span class="bold white">Hétfő, Szerda:</span> 18:00 - 20:00</span>
+          </div>
+        </div>
+        <div class="trainersPic">
+          <img src="./assets/images/practice/trainerKPJ.jpg">
+        </div>
+      </div>
+      <div class="practicePromo">
+        <img src="./assets/images/practice/present.png">
+        <div class="bold upper">Ingyenes Próbaedzés</div>
+        <div>Próbáld ki az egyik edzéshelyszínen az 1 hónapos, INGYENES PRÓBAEDZÉSÜNKET!</div>
+      </div>
+    </div>
   </div>
 </div>

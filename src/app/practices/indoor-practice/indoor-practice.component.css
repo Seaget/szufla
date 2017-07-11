@@ -1,0 +1,109 @@
+.practiceFrame {
+    width: 100%;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+.practiceForWho {
+    max-width: 1050px;
+    margin: 0em auto 5em;
+    display: table;
+}
+
+.card {
+    width: 33%;
+    float: left;
+}
+
+.cardContent {
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.img-icons {
+    width: 10em;
+    padding: 4em 2em 1em;
+}
+
+.practiceMap {
+    display: block;
+}
+
+agm-map {
+  height: 70vh;
+}
+
+.practiceInfo {
+    width: 100%;
+    background-color: black;
+    padding: 2em 0px;
+}
+
+.practiceDetailsContainer {
+    width:100%;
+    border:1px solid black;
+    padding-right:300px;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+}
+
+.practiceDetails {
+    width:100%;
+    float:left;
+    color: white;
+    border: 2px solid #ffc722;
+    padding: 1em;
+    margin-right: 2em;
+}
+
+.practicePromo {
+    width:300px;
+    background-color: #ffc722;
+    float:right;
+    margin-right:-300px;
+    text-align: center;
+    padding: 1em;
+}
+
+.trainingInfo {
+    width: 75%;
+    float: left;
+    color: #ffc722;
+}
+
+.trainersPic {
+    overflow: hidden;
+    width: 25%;
+    float: right;
+}
+
+.trainersPic img {
+    max-width: 10em;
+}
+
+.trainingText {
+    display: block;
+}
+
+.practiceDetailsParts {
+    padding-left: 2em;
+    line-height: 1.7em;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.white {
+    color: white;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.practicePromo img {
+    width: 50%;
+}

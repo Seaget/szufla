@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndoorPracticeComponent implements OnInit {
 
+  title: string = 'Gellért - Csarnok';
+  lat: number = 46.234056;
+  lng: number = 20.173423;
+  zoom: number = 13;
+
   constructor() { }
 
   ngOnInit() {

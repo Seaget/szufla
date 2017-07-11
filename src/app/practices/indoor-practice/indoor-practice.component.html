@@ -1,6 +1,82 @@
 <div class="menuTitle">
   Terem Edzések
 </div>
-<p>
-  indoor-practice works!
-</p>
+
+<div class="practiceFrame">
+  <div class="practiceForWho">
+    <div class="card">
+      <div class="cardContent">
+        <div class="image">
+          <img class="img-icons" src="./assets/images/practice/forWhoAge.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            6 és 60 éves kor között bárkinek ajánlott minimális kezdeti kondícióval.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cardContent">
+        <div class="image">
+          <img class="img-icons" src="./assets/images/practice/forWhoGroup.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            Oktatás létszámtól függően, akár több csoportban.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cardContent">
+        <div class="image">
+          <img class="img-icons" src="./assets/images/practice/forWhoSuit.jpg">
+        </div>
+        <div class="content">
+          <div class="description">
+            <div>Ajánlott öltözet:</div>
+            <div>terem cipő, bővebb rövidnadrág és póló.</div>
+            <div>hidegebb időben aláöltözék és hosszú</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="practiceMap">
+    <div>
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [scrollwheel]=false>
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
+
+  <div class="practiceInfo">
+    <div class="practiceDetailsContainer">
+      <div class="practiceDetails">
+        <div class="trainingInfo">
+          <span class="trainingText"><span class="bold white">Szeged</span></span>
+          <div class="practiceDetailsParts">
+            <span class="trainingText"><span class="bold white">Derkovits fasor 113.</span></span>
+            <span class="trainingText"><span class="bold white">Gellért Szabadidőközpont - csarnok</span></span>
+            <br/>
+            <span class="trainingText"><span class="bold white">Edző:</span> Keszi-Petik János</span>
+            <span class="trainingText"><span class="bold white">Segédedzők:</span> Boross Gábor, Rózsa Tibor</span>
+            <span class="trainingText"><span class="bold white">Kedd, Csütörtök:</span> 18:00 - 20:00</span>
+          </div>
+        </div>
+        <div class="trainersPic">
+          <img src="./assets/images/practice/trainerKPJ.jpg">
+        </div>
+      </div>
+      <div class="practicePromo">
+        <img src="./assets/images/practice/present.png">
+        <div class="bold upper">Ingyenes Próbaedzés</div>
+        <div>Próbáld ki az egyik edzéshelyszínen az 1 hónapos, INGYENES PRÓBAEDZÉSÜNKET!</div>
+      </div>
+    </div>
+  </div>
+</div>
