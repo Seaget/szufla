@@ -7,10 +7,10 @@
                 <li><a class="sliding-u-l-r" [routerLink]="['/practices/indoorPractice']" [routerLinkActive]="['active']">Terem</a></li>
             </ul>
         </li>
-        <li><a class="hsubs sliding-u-l-r" href="#">Csapat</a>
+        <li><a class="hsubs sliding-u-l-r" [routerLink]="['/members/players']">Csapat</a>
             <ul class="subs">
-                <li><a class="sliding-u-l-r" href="#">Szervezők</a></li>
-                <li><a class="sliding-u-l-r" href="#">Játékosok</a></li>
+                <li><a class="sliding-u-l-r" [routerLink]="['/members/managers']" [routerLinkActive]="['active']">Szervezők</a></li>
+                <li><a class="sliding-u-l-r" [routerLink]="['/members/players']" [routerLinkActive]="['active']">Játékosok</a></li>
             </ul>
         </li>
         <li><a class="hsubs sliding-u-l-r" href="#">Ultimate</a>

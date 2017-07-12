@@ -12,4 +12,8 @@ export class HeaderMenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  myfunc() {
+    
+  }
+
 }

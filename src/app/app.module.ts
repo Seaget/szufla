@@ -25,6 +25,10 @@ import { StartPageComponent } from './startPage/start-page/start-page.component'
 import { PracticesComponent } from './practices/practises/practices.component';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { NewsComponent } from './news/news.component';
+import { MembersComponent } from './members/members/members.component';
+import { PlayersComponent } from './members/players/players.component';
+import { ManagersComponent } from './members/managers/managers.component';
+import { ShortManagersDataComponent } from './members/short-managers-data/short-managers-data.component';
 
 const routes: Routes = [
   { path: '',                 redirectTo: 'startPage', pathMatch: 'full' },
@@ -35,6 +39,13 @@ const routes: Routes = [
       { path: '',               redirectTo: 'indoorPractice', pathMatch: 'full' },
       { path: 'indoorPractice', component: IndoorPracticeComponent },
       { path: 'outdoorPractice',component: OutdoorPracticeComponent },
+    ]
+  },
+  { path: 'members',        component: MembersComponent,
+    children:[ 
+      { path: '',           redirectTo: 'players', pathMatch: 'full' },
+      { path: 'managers',   component: ManagersComponent },
+      { path: 'players',    component: PlayersComponent },
     ]
   },
   { path: 'contact',            component: ContactComponent }
@@ -58,7 +69,11 @@ const routes: Routes = [
     StartPageComponent,
     PracticesComponent,
     HeaderMenuComponent,
-    NewsComponent
+    NewsComponent,
+    MembersComponent,
+    PlayersComponent,
+    ManagersComponent,
+    ShortManagersDataComponent
   ],
   imports: [
     BrowserModule,

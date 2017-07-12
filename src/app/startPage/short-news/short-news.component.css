@@ -3,6 +3,7 @@
     background-image: url(../../../assets/images/shorts/news-background.jpg);
     background-position-y: -135%;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .s-news-article {
