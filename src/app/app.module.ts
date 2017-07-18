@@ -29,9 +29,20 @@ import { MembersComponent } from './members/members/members.component';
 import { PlayersComponent } from './members/players/players.component';
 import { ManagersComponent } from './members/managers/managers.component';
 import { ShortManagersDataComponent } from './members/short-managers-data/short-managers-data.component';
+import { NewsArticleItemComponent } from './news/news-article-item/news-article-item.component';
+import { NewsSzaub3Component } from './news/news-szaub3/news-szaub3.component';
+import { NewsSulifrizbi4Component } from './news/news-sulifrizbi4/news-sulifrizbi4.component';
+import { ArticleComponent } from './news/article/article.component';
+import { UnderconstructionComponent } from './underconstruction/underconstruction.component';
 
 const routes: Routes = [
   { path: '',                 redirectTo: 'startPage', pathMatch: 'full' },
+  { path: 'article',          component: ArticleComponent,
+    children:[ 
+      { path: '',               redirectTo: 'sulifrizbi4', pathMatch: 'full' },
+      { path: 'sulifrizbi4',    component: NewsSulifrizbi4Component },
+      { path: 'szaub3',         component: NewsSzaub3Component },
+    ] },
   { path: 'startPage',        component: StartPageComponent },
   { path: 'news',             component: NewsComponent },
   { path: 'practices',        component: PracticesComponent,
@@ -46,6 +57,17 @@ const routes: Routes = [
       { path: '',           redirectTo: 'players', pathMatch: 'full' },
       { path: 'managers',   component: ManagersComponent },
       { path: 'players',    component: PlayersComponent },
+    ]
+  },
+  { path: 'ultimate',        component: MembersComponent,
+    children:[
+      { path: '',           redirectTo: 'ultimate', pathMatch: 'full' },
+      { path: 'ultimate',   component: UnderconstructionComponent },
+      { path: 'szupi',      component: UnderconstructionComponent },
+      { path: 'sulifrizbi', component: UnderconstructionComponent },
+      { path: 'szaub',      component: UnderconstructionComponent },
+      { path: 'discover',   component: UnderconstructionComponent },
+      { path: 'versenyek',  component: UnderconstructionComponent },
     ]
   },
   { path: 'contact',            component: ContactComponent }
@@ -73,7 +95,12 @@ const routes: Routes = [
     MembersComponent,
     PlayersComponent,
     ManagersComponent,
-    ShortManagersDataComponent
+    ShortManagersDataComponent,
+    NewsArticleItemComponent,
+    NewsSzaub3Component,
+    NewsSulifrizbi4Component,
+    ArticleComponent,
+    UnderconstructionComponent
   ],
   imports: [
     BrowserModule,

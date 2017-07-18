@@ -1,0 +1,9 @@
+.news-main-container {
+    width: 100%;
+}
+
+.news-container-wrapper {
+    max-width: 1350px;
+    display: block;
+    margin: 0 auto;
+}
