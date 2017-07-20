@@ -25,6 +25,7 @@ import { StartPageComponent } from './startPage/start-page/start-page.component'
 import { PracticesComponent } from './practices/practises/practices.component';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { NewsComponent } from './news/news.component';
+import { MemberControllerComponent } from './members/memberController/memberController.component';
 import { MembersComponent } from './members/members/members.component';
 import { PlayersComponent } from './members/players/players.component';
 import { ManagersComponent } from './members/managers/managers.component';
@@ -34,6 +35,11 @@ import { NewsSzaub3Component } from './news/news-szaub3/news-szaub3.component';
 import { NewsSulifrizbi4Component } from './news/news-sulifrizbi4/news-sulifrizbi4.component';
 import { ArticleComponent } from './news/article/article.component';
 import { UnderconstructionComponent } from './underconstruction/underconstruction.component';
+import { NewsAboutUsComponent } from './news/news-about-us/news-about-us.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { NewsControllerComponent } from './news/news-controller/news-controller.component';
+import { EventsControllerComponent } from './events/events-controller/events-controller.component';
+import { UltimateControllerComponent } from './ultimate/ultimate-controller/ultimate-controller.component';
 
 const routes: Routes = [
   { path: '',                 redirectTo: 'startPage', pathMatch: 'full' },
@@ -44,7 +50,12 @@ const routes: Routes = [
       { path: 'szaub3',         component: NewsSzaub3Component },
     ] },
   { path: 'startPage',        component: StartPageComponent },
-  { path: 'news',             component: NewsComponent },
+  { path: 'news',             component: NewsControllerComponent,
+    children:[ 
+      { path: 'news',             component: NewsComponent },
+      { path: 'newsAboutUs',      component: UnderconstructionComponent },
+    ]
+  },
   { path: 'practices',        component: PracticesComponent,
     children:[ 
       { path: '',               redirectTo: 'indoorPractice', pathMatch: 'full' },
@@ -52,22 +63,33 @@ const routes: Routes = [
       { path: 'outdoorPractice',component: OutdoorPracticeComponent },
     ]
   },
-  { path: 'members',        component: MembersComponent,
+  { path: 'members',        component: MemberControllerComponent,
     children:[ 
       { path: '',           redirectTo: 'players', pathMatch: 'full' },
       { path: 'managers',   component: ManagersComponent },
       { path: 'players',    component: PlayersComponent },
+      { path: 'members',    component: MembersComponent },
     ]
   },
-  { path: 'ultimate',        component: MembersComponent,
+  { path: 'calendar',       component: CalendarComponent },
+  { path: 'events',         component: EventsControllerComponent,
     children:[
       { path: '',           redirectTo: 'ultimate', pathMatch: 'full' },
-      { path: 'ultimate',   component: UnderconstructionComponent },
       { path: 'szupi',      component: UnderconstructionComponent },
       { path: 'sulifrizbi', component: UnderconstructionComponent },
       { path: 'szaub',      component: UnderconstructionComponent },
       { path: 'discover',   component: UnderconstructionComponent },
-      { path: 'versenyek',  component: UnderconstructionComponent },
+    ]
+  },
+  { path: 'ultimate',        component: UltimateControllerComponent,
+    children:[
+      { path: '',           redirectTo: 'ultimate', pathMatch: 'full' },
+      { path: 'ultimate',   component: UnderconstructionComponent },
+      { path: 'sotg',       component: UnderconstructionComponent },
+      { path: 'knowledge',  component: UnderconstructionComponent },
+      { path: 'links',      component: UnderconstructionComponent },
+      { path: 'training',   component: UnderconstructionComponent },
+      { path: 'ultiquiz',   component: UnderconstructionComponent },
     ]
   },
   { path: 'contact',            component: ContactComponent }
@@ -100,7 +122,13 @@ const routes: Routes = [
     NewsSzaub3Component,
     NewsSulifrizbi4Component,
     ArticleComponent,
-    UnderconstructionComponent
+    UnderconstructionComponent,
+    MemberControllerComponent,
+    NewsAboutUsComponent,
+    CalendarComponent,
+    NewsControllerComponent,
+    EventsControllerComponent,
+    UltimateControllerComponent
   ],
   imports: [
     BrowserModule,

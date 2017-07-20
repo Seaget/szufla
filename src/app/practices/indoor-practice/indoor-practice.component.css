@@ -37,7 +37,7 @@ agm-map {
 .practiceInfo {
     width: 100%;
     background-color: black;
-    padding: 2em 0px;
+    padding: 2em 1em;
 }
 
 .practiceDetailsContainer {

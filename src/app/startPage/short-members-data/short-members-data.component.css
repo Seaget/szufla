@@ -1,8 +1,10 @@
 .wrapper {
     width: 25%;
+    min-width: 300px;
     float: left;
     padding: 10px 30px;
     text-align: center;
+    height: 350px;
 }
 
 .profile {
@@ -55,11 +57,29 @@
     -webkit-transform: skew(-33deg);
     transition: cubic-bezier(0.22, 0.61, 0.36, 1) all 600ms;
     -webkit-transition: cubic-bezier(0.22, 0.61, 0.36, 1) all 600ms;
-    z-index: 2;
+    z-index: 1;
 }
 
 .s-member-number-span {
     transform: skew(33deg);
     -webkit-transform: skew(33deg);
     display: block;
+}
+
+@media only screen and (max-width: 1350px) {
+    .wrapper {
+        width: 33%;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .wrapper {
+        width: 33%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .wrapper {
+        width: 50%;
+    }
 }

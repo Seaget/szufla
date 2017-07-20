@@ -1,6 +1,27 @@
 .short-szufla-box {
-    background: url('../../../assets/images/shorts/short-szufla-background.jpg') 50% 50%;
     height: 50vh;
+    background-color: #ffc722;
+    overflow: hidden;
+}
+
+.short-szufla-box:before {
+    content: ' ';
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.2;
+    background: url('../../../assets/images/shorts/short-szufla-background.jpg') 50% 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 
 .short-szufla-column-first {
@@ -15,16 +36,17 @@
     height: 0px;
 }
 
-.va-about-wrap:before {
+.short-szufla-box:after {
     content: '';
     position: relative;
-    opacity: 0.85;
-    left: -141.75%;
+    opacity: 0.95;
+    left: 50%;
+    top: -100%;
     z-index: 0;
     -webkit-transform: skew(-33deg);
     transform: skew(-33deg);
     display: block;
-    background: #ffc722;
+    background: #363533;
     height: 50vh;
     width: 120vw;
 }
@@ -35,20 +57,6 @@
     text-align: -webkit-center;
     width: 102vh;
     height: 50vh;
-}
-
-.va-about-image-wrap:before {
-    content: '';
-    position: relative;
-    opacity: 0.95;
-    left: 0%;
-    z-index: 0;
-    -webkit-transform: skew(-33deg);
-    transform: skew(-33deg);
-    display: block;
-    background: #363533;
-    height: 50vh;
-    width: 120vw;
 }
 
 .title {
@@ -90,8 +98,8 @@
     height: 19vmax;
     background-size: cover;
     position: relative;
-    top: -45vh;
-    right: 29vmax;
+    top: -50vh;
     border-radius: 10px;
     box-shadow: 8px 8px 10px #555;
+    z-index: 1;
 }
