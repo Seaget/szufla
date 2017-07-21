@@ -107,3 +107,73 @@ agm-map {
 .practicePromo img {
     width: 50%;
 }
+
+/* vertical menu */
+@media only screen and (max-width: 850px) {
+    .practiceFrame {
+        width: 100%;
+        font-size: 1em;
+        line-height: 1.5em;
+    }
+
+    .img-icons {
+        width: 100%;
+        padding: 2em 1.5em 1em;
+    }
+
+    .practiceInfo {
+        width: 100%;
+        background-color: black;
+        padding: 0.5em;
+    }
+
+    .practiceDetails {
+        width:100%;
+        float:none;
+        color: white;
+        border: 2px solid #ffc722;
+        padding: 1em;
+        height: 17em;
+        margin-bottom: 0.5em;
+    }
+    
+    .practiceDetailsContainer {
+        width:100%;
+        border:1px solid black;
+        padding-right:0px;
+        max-width: 100%;
+        margin: auto;
+        display: block;
+    }
+
+    .trainingInfo {
+        width: 60%;
+        float: left;
+        color: #ffc722;
+        font-size: 15px;
+    }
+
+    .practiceDetailsParts {
+        padding-left: 0em;
+        line-height: 1.7em;
+    }
+
+    .trainersPic {
+        overflow: hidden;
+        width: 40%;
+        float: right;
+    }
+
+    .practicePromo {
+        width: 100%;
+        background-color: #ffc722;
+        float:none;
+        text-align: center;
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+
+    .practicePromo img {
+        width: 30%;
+    }
+}

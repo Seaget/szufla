@@ -1,5 +1,6 @@
 .article-container-wrapper {
     width: 100%;
+    padding: 1em;
 }
 
 .article-container {
@@ -26,6 +27,7 @@ h5 {
 img {
     box-shadow: 10px 10px 40px gray;
     margin: 0em 0em 1em;
+    max-width: 100%;
 }
 
 .bold {
@@ -42,11 +44,11 @@ p:first-child {
 }
 
 .team {
-    width: 100px;
+    width: 80px;
     float: left;
 }
 
 .date-place {
-    width: 200px;
+    width: 180px;
     float: left;
 }

@@ -83,3 +83,18 @@
         width: 50%;
     }
 }
+
+@media only screen and (max-width: 850px) {
+    .wrapper {
+        min-width: inherit;
+        padding: 0px 0px;
+    }
+
+    .s-member-name {
+        font-size: 15px;
+    }
+
+    .s-member-position {
+        font-size: 13px;
+    }
+}

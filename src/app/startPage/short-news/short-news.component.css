@@ -134,3 +134,41 @@ a {
     padding: 3px 0 25px 0;
     line-height: 22px;
 }
+
+/* vertical menu */
+@media only screen and (max-width: 850px) {
+    .s-news-article {
+        width: 100%;
+        background-color: white;
+        padding: 10px;
+    }
+
+    .s-news-img {
+        height: 250px;
+        width: 50%;
+        text-align: center;
+        overflow: hidden;
+        float: left;
+        background-color: white;
+        padding: 0.5em;
+        position: relative;
+    }
+
+    .s-img {
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding: 5px;
+    }
+
+    .s-news-container {
+        background-image: none;
+    }
+}

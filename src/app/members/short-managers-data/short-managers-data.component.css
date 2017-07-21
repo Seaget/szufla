@@ -80,5 +80,15 @@
 @media only screen and (max-width: 950px) {
     .wrapper {
         width: 50%;
+        min-width: 0px;
+        padding: 10px 10px;
+    }
+
+    .s-manager-name {
+        font-size: 15px;
+    }
+
+    .s-manager-position {
+        font-size: 13px;
     }
 }

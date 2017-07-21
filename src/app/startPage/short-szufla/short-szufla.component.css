@@ -103,3 +103,42 @@
     box-shadow: 8px 8px 10px #555;
     z-index: 1;
 }
+
+/* vertical menu */
+@media only screen and (max-width: 850px) {
+    .short-szufla-box {
+        height: 38vh;
+    }
+    
+    .title {
+        top: -41vh;
+        left: 10%;
+        font-size: 2em;
+    }
+    
+    .short-team-content {
+        top: -44vh;
+        left: 12%;
+        max-width: 100%;
+        font-size: 10px;
+    }
+    
+    .va-about-image-wrap {
+        width: 40vh;
+        height: 74vh;
+    }
+    
+    .short-team-image {
+        width: 25vmax;
+        height: 16vmax;
+        top: -47vh;
+        border-radius: 10px;
+        box-shadow: 8px 8px 10px #555;
+        z-index: 1;
+        right: -9px;
+    }
+
+    .short-szufla-box:after {
+        left: 50%;
+    }
+}
