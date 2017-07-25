@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("Semantic-UI-CSS-master/semantic.min.css");
+@import url("../node_modules/angular-calendar/dist/css/angular-calendar.css");
 
 body {
     padding: 0px;
@@ -30,4 +31,18 @@ body {
     bottom: 0;
     width: 150%;
     z-index: -1;
+}
+
+@media only screen and (max-width: 850px) {
+    .menuTitle {
+        top: 9.65em;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .menuTitle {
+        top: 10.25em;
+        font-size: 17px;
+    }
 }

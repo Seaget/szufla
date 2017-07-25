@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-start-page',
@@ -13,12 +14,7 @@ export class StartPageComponent implements OnInit {
   }
 
   myfunc() {
-      var a = document.getElementById('menu');
-      if(a.classList.contains('responsive')) {
-          a.classList.remove('responsive');
-      } else {
-          a.classList.add('responsive');
-      }
+      var a = $("#menu").toggle("fast");
   }
 
 }

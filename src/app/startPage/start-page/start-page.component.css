@@ -115,19 +115,16 @@
 }
 
 /* vertical menu */
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 950px) {
     #menu {
-        display: block;
-        transition: all 0.3s ease;
-        width: 0%;
+        display: none;
+        width: 20em;
         height: 100%;
         background: rgba(255, 255, 255, 0.9);
         float: left;
-        visibility: hidden;
-        opacity: 0;
-        overflow: hidden;
         font-family: cursive;
         position: absolute;
+        z-index: 10;
     }
 
     #menu.responsive {
@@ -140,6 +137,11 @@
         top: 0px;
         height: 100%;
         overflow: auto;
+    }
+
+    #content {
+        position: relative;
+        z-index: 0;
     }
 
     #content div#menuActivate {
@@ -168,5 +170,13 @@
         text-align: right;
         width: 95%;
         color: #fff;
+    }
+
+    .promo h4 {
+        line-height: 60px;
+    }
+
+    .promo-sub {
+        line-height: 60px;
     }
 }

@@ -1,36 +1,72 @@
-<div class="ui vertical menu">
-    <div class="item">
-        <div class="ui input"><input type="text" placeholder="Search..."></div>
-    </div>
-    <a class="item">
-        <i class="icon"><img class="icons" src="./assets/images/menu/news.png"></i> Hírek
-    </a>
-    <div class="item">
-        <i class="icon"><img class="icons" src="./assets/images/menu/practice.png"></i> Edzés
-        <div class="menu">
-            <a class="item intendLeft"><img class="icons" src="./assets/images/menu/outdoor.png">Szabadtéri</a>
-            <a class="item intendLeft"><img class="icons" src="./assets/images/menu/indoor.png">Terem</a>
-        </div>
-    </div>
-    <div class="item">
-        <i class="icon"><img class="icons" src="./assets/images/menu/team.png"></i> Csapat
-        <div class="menu">
-            <a class="item intendLeft"><img class="icons" src="./assets/images/menu/managers.png">Szervezők</a>
-            <a class="item intendLeft"><img class="icons" src="./assets/images/menu/players.png">Játékosok</a>
-        </div>
-    </div>
-    <div class="item">
-        <i class="icon"><img class="icons" src="./assets/images/menu/ultimate.png"></i> Ultimate
-        <div class="menu">
-            <a class="item intendLeft">Ultimate Frizbi</a>
-            <a class="item intendLeft">Szupi Kupa</a>
-            <a class="item intendLeft">Suli Frizbi</a>
-            <a class="item intendLeft">SZAUB</a>
-            <a class="item intendLeft">DiscOver</a>
-            <a class="item intendLeft">Versenyek</a>
-        </div>
-    </div>
-    <a class="item">
-        <i class="icon"><img class="icons" src="./assets/images/menu/contactus.png"></i> Kapcsolat
-    </a>
+<div class="ui fluid vertical huge menu">
+  <h3 class="ui block header">Média<i class="icon"><img class="icons" src="./assets/images/menu/news.png"></i></h3>
+  <a class="item" [routerLink]="['/news/news']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Hírek
+  </a>
+  <a class="item" [routerLink]="['/news/newsAboutUs']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Rólunk Írták
+  </a>
+
+  <h3 class="ui block header">Edzések<i class="icon"><img class="icons" src="./assets/images/menu/practice.png"></i></h3>
+  <a class="item" [routerLink]="['/practices/outdoorPractice']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Szabadtéri
+  </a>
+  <a class="item" [routerLink]="['/practices/indoorPractice']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Terem
+  </a>
+
+  <h3 class="ui block header">Csapat<i class="icon"><img class="icons" src="./assets/images/menu/team.png"></i></h3>
+  <a class="item" [routerLink]="['/members/managers']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Szervezők
+  </a>
+  <a class="item" [routerLink]="['/members/players']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Játékosok
+  </a>
+  <a class="item" [routerLink]="['/members/members']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Tagok
+  </a>
+
+  <h3 class="ui block header">Versenynaptár<i class="icon"><img class="icons" src="./assets/images/menu/calendar.png"></i></h3>
+  <a class="item" [routerLink]="['/calendar']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Versenynaptár
+  </a>
+
+  <h3 class="ui block header">Rendezvényeink<i class="icon"><img class="icons" src="./assets/images/menu/event.png"></i></h3>
+  <a class="item" [routerLink]="['/events/szupi']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Szupi Kupa
+  </a>
+  <a class="item" [routerLink]="['/events/sulifrizbi']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Suli Frizbi
+  </a>
+  <a class="item" [routerLink]="['/events/szaub']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    SZAUB
+  </a>
+  <a class="item" [routerLink]="['/events/discover']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Discover
+  </a>
+
+  <h3 class="ui block header">Ultimate<i class="icon"><img class="icons" src="./assets/images/menu/ultimate.png"></i></h3>
+  <a class="item" [routerLink]="['/events/ultimate']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Mi az Ultimate Frizbi?
+  </a>
+  <a class="item" [routerLink]="['/events/sotg']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    SOTG
+  </a>
+  <a class="item" [routerLink]="['/events/knowledge']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Tudástár
+  </a>
+  <a class="item" [routerLink]="['/events/links']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Linktár
+  </a>
+  <a class="item" [routerLink]="['/events/training']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Oktató Anyagok
+  </a>
+  <a class="item" [routerLink]="['/events/ultiquiz']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Ultiquiz
+  </a>
+
+  <h3 class="ui block header">Kapcsolat<i class="icon"><img class="icons" src="./assets/images/menu/contactus.png"></i></h3>
+  <a class="item" [routerLink]="['/contact']" [routerLinkActive]="['active']" (click)="hideMenu()">
+    Kapcsolat
+  </a>
 </div>

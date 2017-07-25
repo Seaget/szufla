@@ -26,7 +26,7 @@ left: -9999px;
 overflow: hidden;
 position: absolute;
 top: -9999px;
-z-index: 2;
+z-index: 3;
 -moz-transform: scaleY(0);
 -ms-transform: scaleY(0);
 -o-transform: scaleY(0);
@@ -137,6 +137,10 @@ float: none;
 @media only screen and (max-width: 950px) {
     #wrapper {
         width: 0px;
+    }
+
+    #nav {
+        display: none;
     }
 
     #nav {

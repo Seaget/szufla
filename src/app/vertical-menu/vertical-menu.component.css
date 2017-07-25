@@ -1,11 +1,17 @@
-@media only screen and (max-width: 850px) {
-    .icons {
-        width: 16px;
-        height: 16px;
-        float: right;
-    }
-    
-    .ui.vertical.menu .menu .item.intendLeft {
-        padding-left: 2.25em;
-    }
+.icons {
+    width: 25px;
+    height: 25px;
+    float: right;
+}
+
+.ui.vertical.menu .menu .item.intendLeft {
+    padding-left: 2.25em;
+}
+
+.ui.header .icon:only-child {
+    float: right;
+}
+
+.ui.vertical.menu .item:before {
+    width: 0px;
 }

@@ -13,6 +13,7 @@
 .card {
     width: 33%;
     float: left;
+    border: none;
 }
 
 .cardContent {
@@ -175,5 +176,11 @@ agm-map {
 
     .practicePromo img {
         width: 30%;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .trainingInfo {
+        font-size: 12px;
     }
 }

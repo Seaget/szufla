@@ -111,16 +111,16 @@
     }
     
     .title {
-        top: -41vh;
+        top: -39vh;
         left: 10%;
-        font-size: 2em;
+        font-size: 2.4em;
     }
     
     .short-team-content {
-        top: -44vh;
+        top: -39vh;
         left: 12%;
         max-width: 100%;
-        font-size: 10px;
+        font-size: 12px;
     }
     
     .va-about-image-wrap {
@@ -129,9 +129,9 @@
     }
     
     .short-team-image {
-        width: 25vmax;
-        height: 16vmax;
-        top: -47vh;
+        width: 20vmax;
+        height: 12vmax;
+        top: -45vh;
         border-radius: 10px;
         box-shadow: 8px 8px 10px #555;
         z-index: 1;
@@ -140,5 +140,20 @@
 
     .short-szufla-box:after {
         left: 50%;
+    }
+}
+
+/* vertical menu */
+@media only screen and (max-width: 470px) {
+    .title {
+        left: 5%;
+        font-size: 1.7em;
+    }
+    
+    .short-team-content {
+        top: -40vh;
+        left: 5%;
+        max-width: 100%;
+        font-size: 8px;
     }
 }

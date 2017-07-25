@@ -41,6 +41,10 @@ import { NewsControllerComponent } from './news/news-controller/news-controller.
 import { EventsControllerComponent } from './events/events-controller/events-controller.component';
 import { UltimateControllerComponent } from './ultimate/ultimate-controller/ultimate-controller.component';
 
+import { CalendarModule } from 'angular-calendar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 const routes: Routes = [
   { path: '',                 redirectTo: 'startPage', pathMatch: 'full' },
   { path: 'article',          component: ArticleComponent,
@@ -137,7 +141,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes), // <-- routes
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB35US8O5Fakotbr2WtYvoxP6T9UcuSJDY'
-    })
+    }),
+    CalendarModule.forRoot(),
+    BrowserAnimationsModule,
+    NgbModule.forRoot()
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "hu-HU" },

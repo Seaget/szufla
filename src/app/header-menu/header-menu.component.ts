@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-header-menu',
@@ -13,7 +14,6 @@ export class HeaderMenuComponent implements OnInit {
   }
 
   myfunc() {
-    
+      var a = $("#menu").toggle("fast");
   }
-
 }
