@@ -1,0 +1,19 @@
+.mainContainer {
+    width: 100%;
+}
+
+.ContentContainer {
+    max-width: 1100px;
+    margin: 1.5em auto;
+}
+
+h1 {
+    margin: 1em 0em;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,220,100,1) 71%,rgba(255,199,34,1) 99%);
+    padding: 0px 1.5em;
+}
+
+.itemWrapper {
+    display: inline-block;
+    width: 100%;
+}

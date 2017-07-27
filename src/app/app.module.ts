@@ -43,7 +43,14 @@ import { UltimateControllerComponent } from './ultimate/ultimate-controller/ulti
 
 import { CalendarModule } from 'angular-calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { WhatIsUltimateComponent } from './ultimate/what-is-ultimate/what-is-ultimate.component';
+import { SotgComponent } from './ultimate/sotg/sotg.component';
+import { LinkKeeperComponent } from './link-keeper/link-keeper.component';
+import { LinkItemComponent } from './link-keeper/link-item/link-item.component';
+import { SzaubContollerComponent } from './events/szaub-contoller/szaub-contoller.component';
+
+import {SuiModule} from 'ng2-semantic-ui';
 
 const routes: Routes = [
   { path: '',                 redirectTo: 'startPage', pathMatch: 'full' },
@@ -81,17 +88,17 @@ const routes: Routes = [
       { path: '',           redirectTo: 'ultimate', pathMatch: 'full' },
       { path: 'szupi',      component: UnderconstructionComponent },
       { path: 'sulifrizbi', component: UnderconstructionComponent },
-      { path: 'szaub',      component: UnderconstructionComponent },
+      { path: 'szaub',      component: SzaubContollerComponent },
       { path: 'discover',   component: UnderconstructionComponent },
     ]
   },
   { path: 'ultimate',        component: UltimateControllerComponent,
     children:[
       { path: '',           redirectTo: 'ultimate', pathMatch: 'full' },
-      { path: 'ultimate',   component: UnderconstructionComponent },
-      { path: 'sotg',       component: UnderconstructionComponent },
+      { path: 'ultimate',   component: WhatIsUltimateComponent },
+      { path: 'sotg',       component: SotgComponent },
       { path: 'knowledge',  component: UnderconstructionComponent },
-      { path: 'links',      component: UnderconstructionComponent },
+      { path: 'links',      component: LinkKeeperComponent },
       { path: 'training',   component: UnderconstructionComponent },
       { path: 'ultiquiz',   component: UnderconstructionComponent },
     ]
@@ -132,7 +139,12 @@ const routes: Routes = [
     CalendarComponent,
     NewsControllerComponent,
     EventsControllerComponent,
-    UltimateControllerComponent
+    UltimateControllerComponent,
+    WhatIsUltimateComponent,
+    SotgComponent,
+    LinkKeeperComponent,
+    LinkItemComponent,
+    SzaubContollerComponent
   ],
   imports: [
     BrowserModule,
@@ -144,7 +156,8 @@ const routes: Routes = [
     }),
     CalendarModule.forRoot(),
     BrowserAnimationsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    SuiModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "hu-HU" },

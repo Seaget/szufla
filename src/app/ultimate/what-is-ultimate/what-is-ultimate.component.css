@@ -1,0 +1,37 @@
+.mainContainer {
+    width: 100%;
+}
+
+.ContentContainer {
+    max-width: 1100px;
+    margin: 1.5em auto;
+}
+
+p {
+    margin-left: 2em;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 2em;
+    text-indent: 4em;
+    padding: 0em 1.5em;
+}
+
+.imageHolder {
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    margin: 1em 0em;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,220,100,1) 71%,rgba(255,199,34,1) 99%);
+    padding: 0px 1.5em;
+}
+
+.source {
+    color: lightsteelblue;
+    text-align: right;
+}
+
+img {
+    width: 100%;
+}

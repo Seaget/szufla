@@ -151,7 +151,7 @@ agm-map {
         width: 60%;
         float: left;
         color: #ffc722;
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .practiceDetailsParts {
@@ -178,6 +178,13 @@ agm-map {
         width: 30%;
     }
 }
+
+@media only screen and (max-width: 450px) {
+    .trainingInfo {
+        font-size: 13px;
+    }
+}
+
 
 @media only screen and (max-width: 350px) {
     .trainingInfo {

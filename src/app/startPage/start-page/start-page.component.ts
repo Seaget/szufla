@@ -14,7 +14,7 @@ export class StartPageComponent implements OnInit {
   }
 
   myfunc() {
-      var a = $("#menu").toggle("fast");
+     $("#menu").toggle("fast");
   }
 
 }
