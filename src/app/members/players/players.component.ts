@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-players',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./players.component.css']
 })
 export class PlayersComponent implements OnInit {
+  playersData: Object;
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+    // Make the HTTP request:
+    this.http.get('http://localhost/backend.php?action=getPlayers').subscribe(playersData => {
+      this.playersData = playersData;
+    });
+  }
 
   ngOnInit() {
   }

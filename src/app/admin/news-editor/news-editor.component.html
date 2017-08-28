@@ -1,0 +1,35 @@
+<div class="ui inverted segment">
+  <h4 class="ui large yellow inverted header">
+    <img class="ui image" src="assets/images/news/editor.png">
+    <div class="content">
+      Hírszerkesztő
+    </div>
+  </h4>
+</div>
+
+<div class="ui divided selection list">
+  <div class="item">
+    <div class="ui red horizontal label">ID</div>
+    <div class="ui horizontal label">{{ newsID }}</div>
+  </div>
+  <a class="item">
+    <div class="ui purple horizontal label">Cím</div>
+    <div class="ui input">
+      <input type="text" placeholder="{{ newsTitle }}">
+    </div>
+  </a>
+  <a class="item">
+    <div class="ui purple horizontal label">Leírás</div>
+    <div class="ui input" style="width: 90%;">
+      <input type="text" placeholder="{{ newsDescription }}">
+    </div>
+  </a>
+  <a class="item">
+    <div class="ui purple horizontal label">Tartalom</div><br/><br/>
+    <div [froalaEditor] [(froalaModel)]="newsContent"></div>
+  </a>
+</div>
+
+<button class="ui button" (click)="saveNews()">
+  Mentés
+</button>

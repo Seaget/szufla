@@ -15,3 +15,8 @@
 .ui.vertical.menu .item:before {
     width: 0px;
 }
+
+.ui.vertical.menu .item.not-written-yet {
+    color: gray;
+    text-decoration: line-through;
+}

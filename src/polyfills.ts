@@ -36,11 +36,3 @@ import 'zone.js/dist/zone';
 // NgClass on SVG elements
 // Needed for: IE10, IE11
 // import 'classlist.js';
-
-import * as $ from 'jquery';
-window['jQuery'] = $;
-
-declare let require: any;
-
-require("./Semantic-UI-CSS-master/semantic.min.js");
-require( "./Semantic-UI-CSS-master/components/tab.js");

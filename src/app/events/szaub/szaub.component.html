@@ -1,0 +1,647 @@
+<div class="menuTitle">
+  SZAUB
+</div>
+
+<div class="mainContainer">
+  <div class="ContentContainer">
+
+    <sui-tabset>
+        <div class="ui pointing secondary menu">
+            <span class="tabTextFrame"><a class="item" suiTabHeader="1"><span class="tabText">Torna</span></a></span>
+            <span class="tabTextFrame"><a class="item" suiTabHeader="2"><span class="tabText">Jelentkezés</span></a></span>
+            <span class="tabTextFrame"><a class="item" suiTabHeader="3"><span class="tabText">Tabella</span></a></span>
+            <span class="tabTextFrame"><a class="item" suiTabHeader="4"><span class="tabText">Fordulók</span></a></span>
+            <span class="tabTextFrame"><a class="item" suiTabHeader="5"><span class="tabText">Csapatok</span></a></span>
+            <span class="tabTextFrame"><a class="item" suiTabHeader="6"><span class="tabText">Szabályok</span></a></span>
+        </div>
+        <div class="ui bottom attached segment" suiTabContent="1">
+            <h1>SZAUB - Szegedi Amatőr Ultimate Bajnokság</h1>
+
+            <div class="szaubLogo">
+                <img src="./assets/images/events/szaub/szaub.png">
+            </div>
+            <p class="description">
+                A Szegedi Amatőr Ultimate Bajnokságot azon csapatsportot kedvelőknek hoztuk létre, akik ki szeretnék próbálni magukat ebben a sportban, legyen az 
+                kezdő vagy haladó. A csapatok egyenlő esélyekkel vesznek részt a sorozatban, mert mindhova egyenlően kerülnek tapasztalt és kevésbé tapasztalt 
+                jelentkezők. A torna - külön-külön - tavasz végi és ősz eleji szezonokból szokott állni, ahol minden csapatnak 30 perces mérkőzések vannak kiírva. 
+                A fordulók mérkőzéseinek időpontja a csapatok közötti egyeztetéseken rugalmasan módosítható.
+            </p>
+
+            <p class="description">
+                A bajnokság további részleteit megtaláljátok a kiírásban: SZAUB kiírás
+            </p>
+
+            <p class="description">
+                A SZAUB-ot a szegedi Szufla Ultimate Team rendezi. 
+            </p>
+        </div>
+        <div class="ui bottom attached segment" suiTabContent="2">
+            <h1>Jelentkezési lehetőségek</h1>
+
+            <p class="description">
+                Bárki jelentkezhet a bajnokságra mindenfajta megkötés nélkül. Egy dolgot kérünk csupán: ha jelentkezel, akkor törekedj arra, hogy a lehető legtöbb 
+                mérkőzésen ott legyél, mert így nem hozod hátrányos helyzetbe a csapatodat.
+            </p>
+
+            <p class="description">
+                Jelentkezni elektronikusan "ITT". Ha kedvetek van ismerkedni az ultimate-tel, akkor megtekinthetitek az edzést vagy akár részt is vehettek rajta.
+            </p>
+
+            <p class="description">
+                <span class="simpleRow"><span class="applying">Jelentkezési határidő:</span> - még nincs kiírás -</span>
+                <span class="simpleRow"><span class="matchDay">Első mérkőzés várható időpontja: -</span></span>
+            </p>
+        </div>
+        <div class="ui bottom attached segment" suiTabContent="3">
+            <sui-accordion [closeOthers]="false">
+                <sui-accordion-panel [isOpen]="true">
+                    <div title>
+                        <i class="dropdown icon"></i>
+                        Aktuális Tabella
+                    </div>
+                    <div content>
+                        <h1 class="noMargin">2017 Tavasz/Nyár:</h1>
+                        <table class="ui unstackable yellow table addLeftMargin">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Csapat</th>
+                                    <th>M</th>
+                                    <th>GY</th>
+                                    <th>D</th>
+                                    <th>V</th>
+                                    <th>DP</th>
+                                    <th>KP</th>
+                                    <th>GK</th>
+                                    <th>PSZ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Discrém</td>
+                                    <td>6</td>
+                                    <td>5</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>87</td>
+                                    <td>38</td>
+                                    <td>+49</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>See Team</td>
+                                    <td>6</td>
+                                    <td>5</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>66</td>
+                                    <td>51</td>
+                                    <td>+15</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>PacsiTeam</td>
+                                    <td>6</td>
+                                    <td>2</td>
+                                    <td>0</td>
+                                    <td>4</td>
+                                    <td>48</td>
+                                    <td>64</td>
+                                    <td>-18</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>EPAM</td>
+                                    <td>6</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>6</td>
+                                    <td>34</td>
+                                    <td>78</td>
+                                    <td>-44</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </sui-accordion-panel>
+                <sui-accordion-panel>
+                    <div title>
+                        <i class="dropdown icon"></i>
+                        Archív Tabellák
+                    </div>
+                    <div content>
+                        <h1 class="noMargin">2016 Ősz:</h1>
+                        <table class="ui unstackable yellow table addLeftMargin">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Csapat</th>
+                                    <th>M</th>
+                                    <th>GY</th>
+                                    <th>D</th>
+                                    <th>V</th>
+                                    <th>DP</th>
+                                    <th>KP</th>
+                                    <th>GK</th>
+                                    <th>PSZ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>TiTiTeam</td>
+                                    <td>4</td>
+                                    <td>4</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>41</td>
+                                    <td>29</td>
+                                    <td>+12</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Frisbros</td>
+                                    <td>4</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>30</td>
+                                    <td>33</td>
+                                    <td>-3</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>DISCrete Five</td>
+                                    <td>4</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>3</td>
+                                    <td>27</td>
+                                    <td>36</td>
+                                    <td>-9</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h1 class="noMargin">2016 Nyár:</h1>
+                        <table class="ui unstackable yellow table addLeftMargin">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Csapat</th>
+                                    <th>M</th>
+                                    <th>GY</th>
+                                    <th>D</th>
+                                    <th>V</th>
+                                    <th>DP</th>
+                                    <th>KP</th>
+                                    <th>GK</th>
+                                    <th>PSZ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>A-Team</td>
+                                    <td>4</td>
+                                    <td>4</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>43</td>
+                                    <td>27</td>
+                                    <td>+16</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>UltiSnails</td>
+                                    <td>4</td>
+                                    <td>2</td>
+                                    <td>0</td>
+                                    <td>2</td>
+                                    <td>38</td>
+                                    <td>33</td>
+                                    <td>+5</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>SzaubZero</td>
+                                    <td>4</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>4</td>
+                                    <td>22</td>
+                                    <td>43</td>
+                                    <td>-21</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </sui-accordion-panel>
+            </sui-accordion>
+        </div>
+        <div class="ui bottom attached segment" suiTabContent="4">
+            <sui-accordion [closeOthers]="false">
+                <sui-accordion-panel [isOpen]="true">
+                    <div title>
+                        <i class="dropdown icon"></i>
+                        Aktuális Fordulók
+                    </div>
+                    <div content>
+                        <h1 class="noMargin marginBottom5px">2017 Tavasz/Nyár:</h1>
+                            <app-match-item month="Máj" day="22" time="18:00" location="UTC" home="Discrém" foreign="See Team" result="13:7"></app-match-item>
+                            <app-match-item month="Máj" day="24" time="18:00" location="UTC" home="EPAM" foreign="Discrém" result="1:15"></app-match-item>
+                            <app-match-item month="Máj" day="24" time="18:00" location="UTC" home="See Team" foreign="PacsiTeam" result="10:8"></app-match-item>
+                            <app-match-item month="Máj" day="29" time="18:00" location="UTC" home="EPAM" foreign="See Team" result="5:10"></app-match-item>
+                            <app-match-item month="Máj" day="31" time="18:00" location="UTC" home="Discrém" foreign="PacsiTeam" result="19:6"></app-match-item>
+                            <app-match-item month="Máj" day="31" time="18:30" location="UTC" home="See Team" foreign="EPAM" result="14:6"></app-match-item>
+                            <app-match-item month="Jún" day="7" time="17:30" location="UTC" home="See Team" foreign="Discrém" result="14:10"></app-match-item>
+                            <app-match-item month="Jún" day="7" time="18:00" location="UTC" home="Discrém" foreign="EPAM" result="16:8"></app-match-item>
+                            <app-match-item month="Jún" day="7" time="18:00" location="UTC" home="PacsiTeam" foreign="See Team" result="9:11"></app-match-item>
+                            <app-match-item month="Jún" day="12" time="18:00" location="UTC" home="EPAM" foreign="PacsiTeam" result="7:12"></app-match-item>
+                            <app-match-item month="Jún" day="14" time="18:00" location="UTC" home="PacsiTeam" foreign="Discrém" result="2:14"></app-match-item>
+                            <app-match-item month="Jún" day="15" time="18:00" location="Mátyástér" home="PacsiTeam" foreign="EPAM" result="11:7"></app-match-item>
+                    </div>
+                </sui-accordion-panel>
+                <sui-accordion-panel>
+                    <div title>
+                        <i class="dropdown icon"></i>
+                        Archív Fordulók
+                    </div>
+                    <div content>
+                        <h1 class="noMargin marginBottom5px">2016 Ősz:</h1>
+                            <app-match-item month="Szept" day="22" time="17:30" location="UTC" home="TiTiTeam" foreign="DISCrete Five" result="12:6"></app-match-item>
+                            <app-match-item month="Szept" day="26" time="18:00" location="UTC" home="TiTiTeam" foreign="Frisbros" result="10:8"></app-match-item>
+                            <app-match-item month="Szept" day="28" time="18:00" location="UTC" home="DISCrete Five" foreign="Frisbros" result="7:9"></app-match-item>
+                            <app-match-item month="Okt" day="3" time="17:50" location="UTC" home="Frisbros" foreign="DISCrete Five" result="6:6"></app-match-item>
+                            <app-match-item month="Okt" day="6" time="17:30" location="UTC" home="DISCrete Five" foreign="TiTiTeam" result="8:9"></app-match-item>
+                            <app-match-item month="Okt" day="10" time="18:00" location="UTC" home="Frisbros" foreign="TiTiTeam" result="7:10"></app-match-item>
+
+                        <h1 class="noMargin marginBottom5px">2016 Nyár:</h1>
+                            <app-match-item month="Júl" day="18" time="18:00" location="UTC" home="A-Team" foreign="SzaubZero" result="9:6"></app-match-item>
+                            <app-match-item month="Júl" day="28" time="18:00" location="UTC" home="A-Team" foreign="UltiSnails" result="9:8"></app-match-item>
+                            <app-match-item month="Aug" day="4" time="18:00" location="UTC" home="SzaubZero" foreign="UltiSnails" result="5:9"></app-match-item>
+                            <app-match-item month="Aug" day="11" time="18:00" location="UTC" home="SzaubZero" foreign="A-Team" result="5:12"></app-match-item>
+                            <app-match-item month="Aug" day="15" time="18:00" location="UTC" home="UltiSnails" foreign="SzaubZero" result="13:6"></app-match-item>
+                            <app-match-item month="Aug" day="18" time="18:00" location="UTC" home="UltiSnails" foreign="A-Team" result="8:13"></app-match-item>
+                        
+                    </div>
+                </sui-accordion-panel>
+            </sui-accordion>
+        </div>
+        <div class="ui bottom attached segment" suiTabContent="5">
+            <sui-accordion [closeOthers]="false">
+                <sui-accordion-panel [isOpen]="true">
+                    <div title>
+                        <i class="dropdown icon"></i>
+                        Aktuális Fordulók
+                    </div>
+                    <div content>
+                        <h1 class="noMargin">2017 Tavasz/Nyár:</h1>
+                        <table class="ui unstackable yellow table addLeftMargin">
+                            <caption>EPAM</caption>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Csiszár Tímea</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Kala Ervin</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Kucsora Róbert</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Losonczi László</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Szívós Erzsébet</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Tóth-Benedek Csanád</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Zádori Tibor</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="ui unstackable yellow table addLeftMargin">
+                            <caption>Discrém</caption>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Fazekas Gábor</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Keszi-Petik János</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Király Enikő</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Prágai Miklós</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Rózsa Tibor</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="ui unstackable yellow table addLeftMargin">
+                            <caption>See Team</caption>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Boross Gábor</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Hrubó Orsolya</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Kiss Gábor</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Pajer-Boross Dóra</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Sándor Dani</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="ui unstackable yellow table addLeftMargin">
+                            <caption>PacsiTeam</caption>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Daruka Lejla</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Ördög Pongrác</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Pál Ferenc</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Prágai Bíborka</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Ritka Jozsó</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Újhelyi Zsigmond</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </sui-accordion-panel>
+                <sui-accordion-panel>
+                    <div title>
+                        <i class="dropdown icon"></i>
+                        Archív Fordulók
+                    </div>
+                    <div content>
+                        <h1 class="noMargin">2016 Ősz:</h1>
+                        <table class="ui unstackable yellow table addLeftMargin">
+                            <caption>TiTiTeam</caption>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Csiszár Tímea</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Boross Gábor</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Hrubó Orsolya</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Ritka Jozsó</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Tóth-Benedek Csanád</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Varga Domonkos</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="ui unstackable yellow table addLeftMargin">
+                            <caption>DISCrete Five</caption>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Király Enikő</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Matyuska Ferenc</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Papp Heni</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Rózsa Tibor</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Sándor Dani</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="ui unstackable yellow table addLeftMargin">
+                            <caption>Frisbros</caption>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Daruka Lejla</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Fazekas Gábor</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Ördög Pongrác</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Pajer-Boross Dóra</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Pál Ferenc</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Újhelyi Zsigmond</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h1 class="noMargin">2016 Nyár:</h1>
+                        <table class="ui unstackable yellow table addLeftMargin">
+                            <caption>A-Team</caption>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Boross Gábor</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Daruka Lejla</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Hrubó Orsolya</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Pajer-Boross Dóra</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Kurucz Gábor</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Sándor Dani</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="ui unstackable yellow table addLeftMargin">
+                            <caption>UltiSnails</caption>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Benecz Tamás</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Csiszár Tímea</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Király Enikő</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Pajer Viktor</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Rózsa Tibor</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Tóth-Benedek Csanád</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="ui unstackable yellow table addLeftMargin">
+                            <caption>SzaubZero</caption>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Gárdián Péter</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Ördög Pongrác</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Papp Heni</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Pál Ferenc</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Tereh Tamás</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Tóth Gábor Endre</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Varga Domonkos</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </sui-accordion-panel>
+            </sui-accordion>
+        </div>
+        <div class="ui bottom attached segment" suiTabContent="6">
+            <h1>Szabályok</h1>
+            <ul>
+                <li>A mérkőzések 3 a 3 ellen zajlanak, de ettől a csapatok közös megegyezéssel eltérhetnek;</li>
+                <li>A pálya mérete 20 x 40 m, a zóna 5 m hosszú;</li>
+                <li>Játékidő 30 perc futóórával, félidő nincs;</li>
+                <li>A fizikai érintkezés a játékosok között nem megengedett;</li>
+                <li>Nincs futás a koronggal;</li>
+                <li>A korongot nem lehet a kézből kivenni vagy kiütni;</li>
+                <li>Pull dobás a korong játékba hozásához;</li>
+                <li>Térfélcsere a pontok megszerzését követően;</li>
+                <li>A „korongos” ember 3 méteres körzetében csak egy védő játékos tartózkodhat, kivéve, ha egy másik támadó 3 méteren belül áll;</li>
+                <li>Fault hívás van;</li>
+                <li>Számolás 10-ig megy;</li>
+                <li>Habár az ultimate frizbi sportágban nem bíró vezeti a mérkőzéseket, hanem a játékosok saját maguk felelősek a játékszabályok betartásáért a sportszerűség szellemében, 
+                    a bajnokságban a mérkőzések zavartalan menetét a Szufla játékosok segítik;</li>
+            </ul>
+
+            <h1>Rangsorolás eldöntése:</h1>
+            <ol>
+                <li>Pontegyenlőség esetén első körben csak azokat a csapatokat vizsgálják meg, amelyek ugyanannyi pontot szereztek - akár két, akár három, akár négy csapatról 
+                    van szó. Ezen belül a szerzett pontok számítanak, vagyis ha két csapat közül kell választani, akkor az egymás elleni eredmény számít. Ha három csapatról, 
+                    akkor a negyedik elleni eredményeket nem veszik figyelembe. (Négy csapatnál értelemszerűen nincs csapat, amelyiket ki lehetne hagyni.)</li>
+                <li>Ha ez nem dönt, akkor az egyenlő pontszámú csapatok gólkülönbsége számít - értelemszerűen itt is csak három vagy négy csapat egyenlősége játszik, mivel két 
+                    csapat közül vagy az egymás elleni eredmény döntene, a döntetlen viszont nem hoz gólkülönbségbeli különbséget.</li>
+                <li>Ha a gólkülönbség sem dönt, akkor a több lőtt gólt veszik figyelembe a többi csapat ellen.</li>
+                <li>Ha egy szélsősegesen kiegyensúlyozott csoportban ezek alapján sem lehetne dönteni, akkor először megnézik, hogy az összes meccset figyelembe véve milyen 
+                    a csapatok gólkülönbsége.</li>
+                <li>Ha ezek sem viszik dűlőre a sorrendet, akkor 3-3 játékos 40 méterről célbadobással dönti el a sorrendet. Páronként dobnak és azon csapat nyer, melynek 
+                    játékosai több párharcot tudnak nyerni. </li>
+            </ol>
+        </div>
+    </sui-tabset>
+
+  </div>
+</div>

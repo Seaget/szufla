@@ -3,104 +3,106 @@
   Versenynaptár
 </div>
 
-<div class="setCenterOnFullScreen">
-  <ng-template #modalContent let-close="close">
-    <div class="modal-header">
-      <h5 class="modal-title">Event action occurred</h5>
-      <button type="button" class="close" (click)="close()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <div>
-        Action:
-        <pre>{{ modalData?.action }}</pre>
+<div class="calendarWrapper">
+  <div class="setCenterOnFullScreen">
+    <ng-template #modalContent let-close="close">
+      <div class="modal-header">
+        <h5 class="modal-title">Event action occurred</h5>
+        <button type="button" class="close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div>
-        Event:
-        <pre>{{ modalData?.event | json }}</pre>
+      <div class="modal-body">
+        <div>
+          Action:
+          <pre>{{ modalData?.action }}</pre>
+        </div>
+        <div>
+          Event:
+          <pre>{{ modalData?.event | json }}</pre>
+        </div>
       </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" (click)="close()">OK</button>
-    </div>
-  </ng-template>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="close()">OK</button>
+      </div>
+    </ng-template>
 
-  <div class="row text-center">
-    <div class="col-md-4">
-      <div class="btn-group">
-        <div
-          class="btn btn-calender"
-          mwlCalendarPreviousView
-          [view]="view"
-          [(viewDate)]="viewDate">
-          Előző
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="btn-group">
+          <div
+            class="btn btn-calender"
+            mwlCalendarPreviousView
+            [view]="view"
+            [(viewDate)]="viewDate">
+            Előző
+          </div>
+          <div
+            class="btn btn-secondary"
+            mwlCalendarToday
+            [(viewDate)]="viewDate">
+            Ma
+          </div>
+          <div
+            class="btn btn-calender"
+            mwlCalendarNextView
+            [view]="view"
+            [(viewDate)]="viewDate">
+            Következő
+          </div>
         </div>
-        <div
-          class="btn btn-secondary"
-          mwlCalendarToday
-          [(viewDate)]="viewDate">
-          Ma
-        </div>
-        <div
-          class="btn btn-calender"
-          mwlCalendarNextView
-          [view]="view"
-          [(viewDate)]="viewDate">
-          Következő
+      </div>
+      <div class="col-md-4">
+        <div class="ui large header">{{ viewDate | calendarDate:(view + 'ViewTitle'):'hu' }}</div>
+      </div>
+      <div class="col-md-4">
+        <div class="btn-group">
+          <div
+            class="btn btn-calender"
+            (click)="view = 'month'"
+            [class.active]="view === 'month'">
+            Havi
+          </div>
+          <div
+            class="btn btn-calender"
+            (click)="view = 'week'"
+            [class.active]="view === 'week'">
+            Heti
+          </div>
+          <div
+            class="btn btn-calender"
+            (click)="view = 'day'"
+            [class.active]="view === 'day'">
+            Napi
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="ui large header">{{ viewDate | calendarDate:(view + 'ViewTitle'):'hu' }}</div>
+    <br>
+    <div [ngSwitch]="view">
+      <mwl-calendar-month-view
+        *ngSwitchCase="'month'"
+        [viewDate]="viewDate"
+        [events]="events"
+        [refresh]="refresh"
+        [activeDayIsOpen]="activeDayIsOpen"
+        (dayClicked)="dayClicked($event.day)"
+        (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-month-view>
+      <mwl-calendar-week-view
+        *ngSwitchCase="'week'"
+        [viewDate]="viewDate"
+        [events]="events"
+        [refresh]="refresh"
+        (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-week-view>
+      <mwl-calendar-day-view
+        *ngSwitchCase="'day'"
+        [viewDate]="viewDate"
+        [events]="events"
+        [refresh]="refresh"
+        (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-day-view>
     </div>
-    <div class="col-md-4">
-      <div class="btn-group">
-        <div
-          class="btn btn-calender"
-          (click)="view = 'month'"
-          [class.active]="view === 'month'">
-          Havi
-        </div>
-        <div
-          class="btn btn-calender"
-          (click)="view = 'week'"
-          [class.active]="view === 'week'">
-          Heti
-        </div>
-        <div
-          class="btn btn-calender"
-          (click)="view = 'day'"
-          [class.active]="view === 'day'">
-          Napi
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div [ngSwitch]="view">
-    <mwl-calendar-month-view
-      *ngSwitchCase="'month'"
-      [viewDate]="viewDate"
-      [events]="events"
-      [refresh]="refresh"
-      [activeDayIsOpen]="activeDayIsOpen"
-      (dayClicked)="dayClicked($event.day)"
-      (eventTimesChanged)="eventTimesChanged($event)">
-    </mwl-calendar-month-view>
-    <mwl-calendar-week-view
-      *ngSwitchCase="'week'"
-      [viewDate]="viewDate"
-      [events]="events"
-      [refresh]="refresh"
-      (eventTimesChanged)="eventTimesChanged($event)">
-    </mwl-calendar-week-view>
-    <mwl-calendar-day-view
-      *ngSwitchCase="'day'"
-      [viewDate]="viewDate"
-      [events]="events"
-      [refresh]="refresh"
-      (eventTimesChanged)="eventTimesChanged($event)">
-    </mwl-calendar-day-view>
   </div>
 </div>

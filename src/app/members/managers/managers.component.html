@@ -4,12 +4,10 @@
 
 <div class="s-members-container">
     <div class="s-members">
-      <app-short-managers-data name="Csiszár Tímea" position="Elnök" img_src="titi"></app-short-managers-data>
-      <app-short-managers-data name="Griecs Péter" position="Alelnök" img_src="petor"></app-short-managers-data>
-      <app-short-managers-data name="Keszi-Petik János" position="Edző" img_src="jani"></app-short-managers-data>
-      <app-short-managers-data name="Kucsora Róbert" position="Suli Frizbi Koordinátor" img_src="kucsi"></app-short-managers-data>
-      <app-short-managers-data name="Pál Ferenc" position="Alelnök" img_src="feri"></app-short-managers-data>
-      <app-short-managers-data name="Papp Henrietta" position="Spirit Manager" img_src="heni"></app-short-managers-data>
-      <app-short-managers-data name="Rózsa Tibor" position="SZAUB Koordinátor" img_src="rozsa"></app-short-managers-data>
+      <app-short-managers-data *ngFor="let manager of managersData" 
+        [name]="manager.name" 
+        [position]="manager.management" 
+        [img_src]="manager.profilePicName">
+      </app-short-managers-data>
     </div>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import * as $ from 'jquery';
 
 import {
   ChangeDetectionStrategy,
@@ -25,16 +27,13 @@ import {
 
 const colors: any = {
   red: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3'
+    primary: '#ad2121'
   },
   blue: {
-    primary: '#1e90ff',
-    secondary: '#D1E8FF'
+    primary: '#1e90ff'
   },
   yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA'
+    primary: '#e3bc08'
   }
 };
 
@@ -47,6 +46,23 @@ const colors: any = {
 export class CalendarComponent implements OnInit {
 
   ngOnInit() {
+    // Make the HTTP request:
+    //this.http.get('/api/items').subscribe(data => {
+    this.http.get('http://localhost/backend.php?action=getTournaments').subscribe(data => {
+      // Read the result field from the JSON response.
+      let copiedEvents = this.events;
+
+      $.each(data, function(i, item) {
+          copiedEvents.push({
+            start: startOfDay(new Date(item.start)),
+            end: startOfDay(new Date(item.end)),
+            title: item.title + " (" + item.location + ")",
+            color: colors.blue});
+      });
+      
+      this.events = copiedEvents;
+      this.refresh.next();
+    });
   }
 
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
@@ -62,29 +78,11 @@ export class CalendarComponent implements OnInit {
 
   refresh: Subject<any> = new Subject();
 
-  events: CalendarEvent[] = [
-    {
-      start: startOfDay(new Date("2017, 7, 22")),
-      title: 'Koed OB - 1. forduló (Székesfehérvár)',
-      color: colors.red
-    },
-    {
-      start: startOfDay(new Date("2017, 8, 12")),
-      end: startOfDay(new Date("2017, 8, 13")),
-      title: 'Frisbeach',
-      color: colors.blue
-    },
-    {
-      start: startOfDay(new Date("2017, 9, 9")),
-      end: startOfDay(new Date("2017, 9, 10")),
-      title: 'DiscOver',
-      color: colors.yellow
-    }
-  ];
+  events: CalendarEvent[] = [];
 
   activeDayIsOpen: boolean = false;
 
-  constructor(private modal: NgbModal) {}
+  constructor(private http: HttpClient, private modal: NgbModal) {}
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {

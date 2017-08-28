@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule, LOCALE_ID, Pipe, PipeTransform } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -48,9 +48,24 @@ import { WhatIsUltimateComponent } from './ultimate/what-is-ultimate/what-is-ult
 import { SotgComponent } from './ultimate/sotg/sotg.component';
 import { LinkKeeperComponent } from './link-keeper/link-keeper.component';
 import { LinkItemComponent } from './link-keeper/link-item/link-item.component';
-import { SzaubContollerComponent } from './events/szaub-contoller/szaub-contoller.component';
+import { SzaubComponent } from './events/szaub/szaub.component';
 
-import {SuiModule} from 'ng2-semantic-ui';
+import { SuiModule } from 'ng2-semantic-ui';
+import { MatchItemComponent } from './events/szaub/match-item/match-item.component';
+import { SulifrizbiComponent } from './events/sulifrizbi/sulifrizbi.component';
+import { SzupikupaComponent } from './events/szupikupa/szupikupa.component';
+import { DiscoverComponent } from './events/discover/discover.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { NewsEditorComponent } from './admin/news-editor/news-editor.component';
+import { AdminComponent } from './admin/admin.component';
+
+// Import Angular plugin.
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+
+import { DomSanitizer } from '@angular/platform-browser';
+import { NewsListComponent } from './admin/news-list/news-list.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 const routes: Routes = [
   { path: '',                 redirectTo: 'startPage', pathMatch: 'full' },
@@ -86,13 +101,13 @@ const routes: Routes = [
   { path: 'events',         component: EventsControllerComponent,
     children:[
       { path: '',           redirectTo: 'ultimate', pathMatch: 'full' },
-      { path: 'szupi',      component: UnderconstructionComponent },
-      { path: 'sulifrizbi', component: UnderconstructionComponent },
-      { path: 'szaub',      component: SzaubContollerComponent },
-      { path: 'discover',   component: UnderconstructionComponent },
+      { path: 'szupi',      component: SzupikupaComponent },
+      { path: 'sulifrizbi', component: SulifrizbiComponent },
+      { path: 'szaub',      component: SzaubComponent },
+      { path: 'discover',   component: DiscoverComponent },
     ]
   },
-  { path: 'ultimate',        component: UltimateControllerComponent,
+  { path: 'ultimate',       component: UltimateControllerComponent,
     children:[
       { path: '',           redirectTo: 'ultimate', pathMatch: 'full' },
       { path: 'ultimate',   component: WhatIsUltimateComponent },
@@ -103,8 +118,19 @@ const routes: Routes = [
       { path: 'ultiquiz',   component: UnderconstructionComponent },
     ]
   },
-  { path: 'contact',            component: ContactComponent }
+  { path: 'contact',        component: ContactComponent },
+  { path: 'admin',          component: AdminComponent },
+  { path: 'admin/newsEditor/:newsID',component: NewsEditorComponent },
+  { path: 'newsList',       component: NewsListComponent }
 ];
+
+@Pipe({ name: 'safeHtml'})
+export class SafeHtmlPipe implements PipeTransform  {
+  constructor(private sanitized: DomSanitizer) {}
+  transform(value) {
+    return this.sanitized.bypassSecurityTrustHtml(value);
+  }
+}
 
 @NgModule({
   declarations: [
@@ -144,7 +170,15 @@ const routes: Routes = [
     SotgComponent,
     LinkKeeperComponent,
     LinkItemComponent,
-    SzaubContollerComponent
+    SzaubComponent,
+    MatchItemComponent,
+    SulifrizbiComponent,
+    SzupikupaComponent,
+    DiscoverComponent,
+    NewsEditorComponent,
+    AdminComponent,
+    SafeHtmlPipe,
+    NewsListComponent
   ],
   imports: [
     BrowserModule,
@@ -157,7 +191,11 @@ const routes: Routes = [
     CalendarModule.forRoot(),
     BrowserAnimationsModule,
     NgbModule.forRoot(),
-    SuiModule
+    SuiModule,
+    HttpClientModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
+    Ng2SmartTableModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "hu-HU" },

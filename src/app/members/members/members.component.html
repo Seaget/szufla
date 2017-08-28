@@ -4,13 +4,11 @@
 
 <div class="s-members-container">
     <div class="s-members">
-      <app-short-members-data name="Bató Ildikó" position="" number="-" img_src="bi"></app-short-members-data>
-      <app-short-members-data name="Bojti Róbert" position="" number="-" img_src="bojti"></app-short-members-data>
-      <app-short-members-data name="Nagy Csaba" position="" number="-" img_src="lordos"></app-short-members-data>
-      <app-short-members-data name="Mihály Balázs Krisztián" position="" number="-" img_src="mihu"></app-short-members-data>
-      <app-short-members-data name="Ritka József" position="" number="-" img_src="jozso"></app-short-members-data>
-      <app-short-members-data name="Varsányi-Rózsa Judit" position="" number="-" img_src="panka"></app-short-members-data>
-      <app-short-members-data name="Terjéki László Dénes" position="" number="-" img_src="denes"></app-short-members-data>
-      <app-short-members-data name="Zádori Tibor" position="" number="-" img_src="zadori"></app-short-members-data>
+      <app-short-members-data *ngFor="let player of playersData" 
+        [name]="player.name" 
+        [position]="player.position" 
+        [number]="player.number" 
+        [img_src]="player.profilePicName">
+      </app-short-members-data>
     </div>
 </div>

@@ -100,8 +100,6 @@ float: none;
     background: orange;
 }
 
-
-
 #nav li:before {
     content: '';
     width: 0;
@@ -116,6 +114,11 @@ float: none;
 
 #nav li.menu-active:before {
     width: 100%;
+}
+
+#nav li a.not-written-yet {
+    color: gray;
+    text-decoration: line-through;
 }
 
 @media only screen and (max-width: 1350px) {

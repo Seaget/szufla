@@ -1,0 +1,31 @@
+<div class="ui inverted segment">
+  <h4 class="ui large yellow inverted header">
+    <div class="content">
+      Hírek
+    </div>
+  </h4>
+</div>
+
+<table class="ui yellow table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Cím</th>
+      <th>Leírás</th>
+      <th>Akció</th>
+    </tr>
+  </thead>
+  <tbody>
+     <ng-container *ngFor="let item of news">
+      <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.description }}</td>
+        <td>
+          <a [routerLink]="['/admin/newsEditor/1']"><button class="mini ui secondary basic button">Szerkeszt</button></a>
+          <button class="mini ui negative basic button" (click)="removeNews( item.id )">Töröl</button>
+        </td>
+      </tr>
+     </ng-container>
+  </tbody>
+</table>
