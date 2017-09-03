@@ -6,10 +6,9 @@
   </h4>
 </div>
 
-<table class="ui yellow table">
+<table  id="myTable" class="ui yellow table">
   <thead>
     <tr>
-      <th>ID</th>
       <th>Cím</th>
       <th>Leírás</th>
       <th>Akció</th>
@@ -18,14 +17,19 @@
   <tbody>
      <ng-container *ngFor="let item of news">
       <tr>
-        <td>{{ item.id }}</td>
         <td>{{ item.title }}</td>
         <td>{{ item.description }}</td>
         <td>
-          <a [routerLink]="['/admin/newsEditor/1']"><button class="mini ui secondary basic button">Szerkeszt</button></a>
+          <a [routerLink]="['/admin/newsEditor/' + item.id]"><button class="mini ui secondary basic button">Szerkeszt</button></a>
           <button class="mini ui negative basic button" (click)="removeNews( item.id )">Töröl</button>
         </td>
       </tr>
      </ng-container>
   </tbody>
 </table>
+
+<a [routerLink]="['/admin/newsEditor/0']">
+  <button class="ui primary button">
+    Új
+  </button>
+</a>

@@ -15,21 +15,23 @@
   <a class="item">
     <div class="ui purple horizontal label">Cím</div>
     <div class="ui input">
-      <input type="text" placeholder="{{ newsTitle }}">
+      <input [(ngModel)]="newsTitle" placeholder="Cím..." >
     </div>
   </a>
   <a class="item">
     <div class="ui purple horizontal label">Leírás</div>
     <div class="ui input" style="width: 90%;">
-      <input type="text" placeholder="{{ newsDescription }}">
+      <input type="text" [(ngModel)]="newsDescription" placeholder="Leírás...">
     </div>
   </a>
   <a class="item">
     <div class="ui purple horizontal label">Tartalom</div><br/><br/>
-    <div [froalaEditor] [(froalaModel)]="newsContent"></div>
+    <div [froalaEditor]="options" [(froalaModel)]="newsContent"></div>
   </a>
 </div>
 
-<button class="ui button" (click)="saveNews()">
-  Mentés
-</button>
+<div class="ui buttons margins">
+  <button class="ui positive button" (click)="saveNews()">Mentés</button>
+  <div class="or"></div>
+  <a [routerLink]="['/newsList']"><button class="ui button">Vissza</button></a>
+</div>

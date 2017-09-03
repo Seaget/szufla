@@ -18,13 +18,10 @@ export class NewsListComponent implements OnInit {
     });
   }
 
-  public editNews(newsID) {
-    console.log(newsID);
-  }
-
   public removeNews(newsID) {
     this.http.post('http://localhost/backend.php?action=deleteNews', JSON.stringify({
       id: newsID
     })).subscribe();
+    location.reload();
   }
 }

@@ -11,23 +11,28 @@ import * as $ from 'jquery';
 export class NewsEditorComponent implements OnInit {
 
   public newsID: number;
-  public newsTitle: string = 'Cím...'
-  public newsDescription: string = 'Leírás...'
-  public newsContent: string = 'Hír...'
+  public newsTitle: string = ''
+  public newsDescription: string = ''
+  public newsContent: string = ''
 
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
        this.newsID = +params['newsID'];
+
+       if(this.newsID == 0) {
+         this.newsID = null;
+       }
     });
 
-    this.http.get('http://localhost/backend.php?action=getNewsById&id='+this.newsID).subscribe(newsData => {
-      console.log(newsData);
-      this.newsTitle = newsData[0].title;
-      this.newsDescription = newsData[0].description;
-      this.newsContent = newsData[0].content;
-    });
+    if(this.newsID != null) {
+      this.http.get('http://localhost/backend.php?action=getNewsById&id='+this.newsID).subscribe(newsData => {
+        this.newsTitle = newsData[0].title;
+        this.newsDescription = newsData[0].description;
+        this.newsContent = newsData[0].content;
+      });
+    }
   }
 
   public saveNews() {
@@ -41,4 +46,26 @@ export class NewsEditorComponent implements OnInit {
       })).subscribe();
     }
   }
+
+  public options: Object = {
+    charCounterCount: true,
+    // Set the image upload parameter.
+    imageUploadParam: 'fileToUpload',
+
+    // Set the image upload URL.
+    imageUploadURL: '/backend.php?action=uploadImage',
+
+    // Additional upload params.
+    imageUploadParams: {id: 'my_editor'},
+
+    // Set request type.
+    imageUploadMethod: 'POST',
+
+    // Set max image size to 5MB.
+    imageMaxSize: 5 * 1024 * 1024,
+
+    // Allow to upload PNG and JPG.
+    imageAllowedTypes: ['jpeg', 'jpg', 'png'],
+
+  };
 }
