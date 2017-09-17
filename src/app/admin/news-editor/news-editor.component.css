@@ -2,3 +2,12 @@
     margin-bottom: 10vh;
     margin-left: 10vh;
 }
+
+.coverlabel {
+    vertical-align: top;
+}
+
+.coverimage {
+    height: 150px;
+    border-radius: 1em;
+}

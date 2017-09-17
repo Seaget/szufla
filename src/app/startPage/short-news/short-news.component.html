@@ -5,17 +5,17 @@
   <div class="s-article-container">
     <div class="s-news-article a-first">
       <div class="s-news-img">
-        <img class="s-img" src="./assets/images/shorts/news1.jpg">
+        <img class="s-img" src="{{ newsData1.cover }}">
       </div>
       <div class="s-news-info">
         <div class="a-date">
-          2017 Május 26.
+          {{ newsData1.date }}
         </div>
         <div class="a-title">
-          Suli Frizbi
+          {{ newsData1.title }}
         </div>
         <div class="a-text">
-          A Szufla újra megrendezte - immár a 4. - Suli Frizbi kupát.
+          {{ newsData1.description }}
         </div>
         <div class="go-to-article">
           <a routerLink="/article/sulifrizbi4">TOVÁBB ></a>
@@ -24,17 +24,17 @@
     </div>
     <div class="s-news-article a-second">
       <div class="s-news-img">
-        <img class="s-img" src="./assets/images/shorts/news2.jpg">
+        <img class="s-img" src="{{ newsData2.cover }}">
       </div>
       <div class="s-news-info">
         <div class="a-date">
-          2017 Június 16.
+            {{ newsData2.date }}
         </div>
         <div class="a-title">
-          SZAUB
+            {{ newsData2.title }}
         </div>
         <div class="a-text">
-          Befejeződött a 3. SZAUB, a tabella végleges.
+            {{ newsData2.description }}
         </div>
         <div class="go-to-article">
           <a routerLink="/article/szaub3">TOVÁBB ></a>

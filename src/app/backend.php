@@ -65,10 +65,12 @@ class mySQLDatabaseManager {
         $request_body = file_get_contents('php://input');
         $requestedData = json_decode($request_body);
 
-        $stmt = $this->pdo->prepare('INSERT INTO news (title, description, content) VALUES (:title, :description, :content)');
+        $stmt = $this->pdo->prepare('INSERT INTO news (title, cover, description, date, content) VALUES (:title, :cover, :description, :date, :content)');
 
         $stmt->bindParam(':title', $requestedData->title, PDO::PARAM_STR);
+        $stmt->bindParam(':cover', $requestedData->cover, PDO::PARAM_STR);
         $stmt->bindParam(':description', $requestedData->description, PDO::PARAM_STR);
+        $stmt->bindParam(':date', date("Y-m-d"), PDO::PARAM_STR);   
         $stmt->bindParam(':content', $requestedData->newsContent, PDO::PARAM_STR);
         
         $stmt->execute();
@@ -82,9 +84,10 @@ class mySQLDatabaseManager {
         $request_body = file_get_contents('php://input');
         $requestedData = json_decode($request_body);
 
-        $stmt = $this->pdo->prepare('UPDATE news SET title = :title, description = :description, content = :content WHERE id = :id');
+        $stmt = $this->pdo->prepare('UPDATE news SET title = :title, cover = :cover, description = :description, content = :content WHERE id = :id');
         $stmt->bindParam(':id', $requestedData->id, PDO::PARAM_INT);
         $stmt->bindParam(':title', $requestedData->title, PDO::PARAM_STR);
+        $stmt->bindParam(':cover', $requestedData->cover, PDO::PARAM_STR);
         $stmt->bindParam(':description', $requestedData->description, PDO::PARAM_STR);
         $stmt->bindParam(':content', $requestedData->newsContent, PDO::PARAM_STR);
         
@@ -167,7 +170,7 @@ class mySQLDatabaseManager {
             $uploadOk = 0;
         }
         // Check file size
-        if ($_FILES["fileToUpload"]["size"] > 500000) {
+        if ($_FILES["fileToUpload"]["size"] > 5000000) {
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
         }

@@ -11,6 +11,7 @@
     <tr>
       <th>Cím</th>
       <th>Leírás</th>
+      <th>Dátum</th>
       <th>Akció</th>
     </tr>
   </thead>
@@ -19,6 +20,7 @@
       <tr>
         <td>{{ item.title }}</td>
         <td>{{ item.description }}</td>
+        <td>{{ item.date }}</td>
         <td>
           <a [routerLink]="['/admin/newsEditor/' + item.id]"><button class="mini ui secondary basic button">Szerkeszt</button></a>
           <button class="mini ui negative basic button" (click)="removeNews( item.id )">Töröl</button>

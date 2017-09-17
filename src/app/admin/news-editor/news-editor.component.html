@@ -13,6 +13,13 @@
     <div class="ui horizontal label">{{ newsID }}</div>
   </div>
   <a class="item">
+    <div class="ui purple horizontal label coverlabel">Borító</div>
+    <div class="ui input">
+      <img class="coverimage" src="{{ newsCoverImage }}">
+      <input type="file" (change)="fileChange($event)" placeholder="{{ newsCoverImage }}" accept=".png,.jpg,.bmp">
+    </div>
+  </a>
+  <a class="item">
     <div class="ui purple horizontal label">Cím</div>
     <div class="ui input">
       <input [(ngModel)]="newsTitle" placeholder="Cím..." >

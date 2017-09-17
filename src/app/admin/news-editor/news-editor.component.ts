@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RequestOptions } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import * as $ from 'jquery';
 
@@ -14,6 +15,7 @@ export class NewsEditorComponent implements OnInit {
   public newsTitle: string = ''
   public newsDescription: string = ''
   public newsContent: string = ''
+  public newsCoverImage: string = 'assets/images/noImage.jpg'
 
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
@@ -31,6 +33,7 @@ export class NewsEditorComponent implements OnInit {
         this.newsTitle = newsData[0].title;
         this.newsDescription = newsData[0].description;
         this.newsContent = newsData[0].content;
+        this.newsCoverImage = newsData[0].cover;
       });
     }
   }
@@ -38,11 +41,11 @@ export class NewsEditorComponent implements OnInit {
   public saveNews() {
     if(this.newsID == null) {
       this.http.post('http://localhost/backend.php?action=createNews', JSON.stringify({
-        id: null, title: this.newsTitle, description: this.newsDescription, newsContent: this.newsContent
+        id: null, title: this.newsTitle, cover: this.newsCoverImage, description: this.newsDescription, newsContent: this.newsContent
       })).subscribe();
     } else {
       this.http.post('http://localhost/backend.php?action=editNews', JSON.stringify({
-        id: this.newsID, title: this.newsTitle, description: this.newsDescription, newsContent: this.newsContent
+        id: this.newsID, title: this.newsTitle, cover: this.newsCoverImage, description: this.newsDescription, newsContent: this.newsContent
       })).subscribe();
     }
   }
@@ -68,4 +71,25 @@ export class NewsEditorComponent implements OnInit {
     imageAllowedTypes: ['jpeg', 'jpg', 'png'],
 
   };
+
+  fileChange(event) {
+    let fileList: FileList = event.target.files;
+    if(fileList.length > 0) {
+        let file: File = fileList[0];
+        let formData:FormData = new FormData();
+        formData.append('fileToUpload', file, file.name);
+        let headers = new Headers();
+        /** No need to include Content-Type in Angular 4 */
+        headers.append('Content-Type', 'multipart/form-data');
+        headers.append('Accept', 'application/json');
+        this.http.post(`http://localhost/backend.php?action=uploadImage`, formData)
+            .subscribe(
+                data => { 
+                  console.log('upload success');
+                  this.newsCoverImage = data['link'];
+                },
+                error => console.log(error)
+            )
+    }
+}
 }

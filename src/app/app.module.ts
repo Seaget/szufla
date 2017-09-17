@@ -66,6 +66,7 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NewsListComponent } from './admin/news-list/news-list.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { ImageUploadModule } from 'angular2-image-upload';
 
 const routes: Routes = [
   { path: '',                 redirectTo: 'startPage', pathMatch: 'full' },
@@ -195,7 +196,8 @@ export class SafeHtmlPipe implements PipeTransform  {
     HttpClientModule,
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    ImageUploadModule.forRoot()
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "hu-HU" },
