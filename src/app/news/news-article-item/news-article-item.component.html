@@ -1,7 +1,7 @@
 <div class="article-wrapper">
   <div class="article-image-wrapper">
     <a href="#">
-      <img class="article-image" src="./assets/images/shorts/{{ cover }}.jpg">
+      <img class="article-image" src="{{ cover }}">
     </a>
   </div>
   <div class="article-content-wrapper">
@@ -16,6 +16,6 @@
     </div>
   </div>
   <div class="article-read">
-    <a class="article-read-button" routerLink="/article/{{id}}">Tovább ></a>
+    <a class="article-read-button" [routerLink]="['/article/' + id]">Tovább ></a>
   </div>
 </div>

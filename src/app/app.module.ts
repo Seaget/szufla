@@ -70,12 +70,6 @@ import { ImageUploadModule } from 'angular2-image-upload';
 
 const routes: Routes = [
   { path: '',                 redirectTo: 'startPage', pathMatch: 'full' },
-  { path: 'article',          component: ArticleComponent,
-    children:[ 
-      { path: '',               redirectTo: 'sulifrizbi4', pathMatch: 'full' },
-      { path: 'sulifrizbi4',    component: NewsSulifrizbi4Component },
-      { path: 'szaub3',         component: NewsSzaub3Component },
-    ] },
   { path: 'startPage',        component: StartPageComponent },
   { path: 'news',             component: NewsControllerComponent,
     children:[ 
@@ -83,6 +77,7 @@ const routes: Routes = [
       { path: 'newsAboutUs',      component: UnderconstructionComponent },
     ]
   },
+  { path: 'article/:newsID',  component: ArticleComponent },
   { path: 'practices',        component: PracticesComponent,
     children:[ 
       { path: '',               redirectTo: 'indoorPractice', pathMatch: 'full' },

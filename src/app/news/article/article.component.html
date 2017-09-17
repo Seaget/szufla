@@ -1,1 +1,15 @@
-<router-outlet></router-outlet>
+<app-header-menu></app-header-menu>
+<div class="menuTitle">
+    {{ newsTitle }}
+</div>
+
+<div class="article-container-wrapper">
+  <div class="article-container">
+
+  <h2>{{ newsTitle }}</h2>
+  <h5>{{ newsDate }}</h5>
+
+  <div [froalaView]="newsContent"></div>
+
+  </div>
+</div>

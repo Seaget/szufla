@@ -1,10 +1,20 @@
 <div class="menuTitle">
   Hírek
 </div>
-
+<!--
 <div class="news-main-container">
     <div class="news-container-wrapper">
       <app-news-article-item id="sulifrizbi4" cover="news1" title="4. Suli Frizbi" description="A Szufla újra megrendezte - immár a 4. - Suli Frizbi kupát." date="2017-01-01"></app-news-article-item>
       <app-news-article-item id="szaub3" cover="news2" title="3. SZAUB zárás" description="Befejeződött a 3. SZAUB, a tabella végleges." date="2017-01-02"></app-news-article-item>
     </div>
+</div>
+-->
+<div class="news-main-container">
+  <div class="news-container-wrapper">
+    
+      <ng-container *ngFor="let item of news">
+          <app-news-article-item id="{{ item.id }}" cover="{{ item.cover }}" title="{{ item.title }}" description="{{ item.description }}" date="{{ item.date }}"></app-news-article-item> 
+      </ng-container>
+
+  </div>
 </div>
