@@ -48,7 +48,7 @@ export class CalendarComponent implements OnInit {
   ngOnInit() {
     // Make the HTTP request:
     //this.http.get('/api/items').subscribe(data => {
-    this.http.get('http://localhost/backend.php?action=getTournaments').subscribe(data => {
+    this.http.get('http://localhost/backend.php?action=getEvents').subscribe(data => {
       // Read the result field from the JSON response.
       let copiedEvents = this.events;
 

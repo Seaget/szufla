@@ -1,0 +1,8 @@
+.fixSize {
+    max-width: 500px;
+    margin: 2em auto 0px;
+}
+
+.badLogin {
+    display: none;
+}

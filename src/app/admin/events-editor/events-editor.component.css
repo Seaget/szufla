@@ -4,15 +4,12 @@
     padding: 0px 20px;
 }
 
-.coverlabel {
-    vertical-align: top;
-}
-
-.coverimage {
-    height: 150px;
-    border-radius: 1em;
+.margins {
+    margin-bottom: 10vh;
+    margin-left: 10vh;
 }
 
 #saveSuccess, #saveWarning {
     display: none;
 }
+

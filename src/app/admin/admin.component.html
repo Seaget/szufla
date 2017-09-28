@@ -1,3 +1,8 @@
+<app-header-menu></app-header-menu>
+<div class="menuTitle">
+  Admin Management Site
+</div>
+
 <div class="ui clearing segment">
   <a [routerLink]="['/newsList']">
     <h2 class="ui icon floated header">
@@ -8,17 +13,39 @@
     </h2>
   </a>
 
-  <h2 class="ui icon floated header">
-    <i class="user icon"></i>
-    <div class="content">
-      User Management
-    </div>
-  </h2>
+  <a [routerLink]="['/membersList']">
+    <h2 class="ui icon floated header">
+      <i class="user icon"></i>
+      <div class="content">
+        Member Management
+      </div>
+    </h2>
+  </a>
 
-  <h2 class="ui icon floated header">
-    <i class="calendar icon"></i>
-    <div class="content">
-      Events Management
-    </div>
-  </h2>
+  <a [routerLink]="['/eventsList']">
+    <h2 class="ui icon floated header">
+      <i class="calendar icon"></i>
+      <div class="content">
+        Events Management
+      </div>
+    </h2>
+  </a>
+
+  <a [routerLink]="['/adminsList']">
+    <h2 class="ui icon floated header">
+      <i class="doctor icon"></i>
+      <div class="content">
+        User Management
+      </div>
+    </h2>
+  </a>
+
+  <a [routerLink]="['/home']" (click)="logout()">
+    <h2 class="ui icon floated header">
+      <i class="sign out icon"></i>
+      <div class="content">
+        Logout
+      </div>
+    </h2>
+  </a>
 </div>

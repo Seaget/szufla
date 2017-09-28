@@ -1,44 +1,56 @@
-<div class="ui inverted segment">
-  <h4 class="ui large yellow inverted header">
-    <img class="ui image" src="assets/images/news/editor.png">
-    <div class="content">
-      Hírszerkesztő
-    </div>
-  </h4>
+<app-header-menu></app-header-menu>
+<div class="menuTitle">
+  Hírszerkesztő
 </div>
 
-<div class="ui divided selection list">
-  <div class="item">
-    <div class="ui red horizontal label">ID</div>
-    <div class="ui horizontal label">{{ newsID }}</div>
+<div class="container">
+  <div class="ui divided selection list">
+    <div class="item">
+      <div class="ui red horizontal label">ID</div>
+      <div class="ui horizontal label">{{ newsID }}</div>
+    </div>
+    <a class="item">
+      <div class="ui purple horizontal label coverlabel">Borító</div>
+      <div class="ui input">
+        <img class="coverimage" src="{{ newsCoverImage }}">
+        <input type="file" (change)="fileChange($event)" placeholder="{{ newsCoverImage }}" accept=".png,.jpg,.bmp">
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Cím</div>
+      <div class="ui input">
+        <input [(ngModel)]="newsTitle" placeholder="Cím..." >
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Leírás</div>
+      <div class="ui input" style="width: 90%;">
+        <input type="text" [(ngModel)]="newsDescription" placeholder="Leírás...">
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Tartalom</div><br/><br/>
+      <div [froalaEditor]="options" [(froalaModel)]="newsContent"></div>
+    </a>
   </div>
-  <a class="item">
-    <div class="ui purple horizontal label coverlabel">Borító</div>
-    <div class="ui input">
-      <img class="coverimage" src="{{ newsCoverImage }}">
-      <input type="file" (change)="fileChange($event)" placeholder="{{ newsCoverImage }}" accept=".png,.jpg,.bmp">
-    </div>
-  </a>
-  <a class="item">
-    <div class="ui purple horizontal label">Cím</div>
-    <div class="ui input">
-      <input [(ngModel)]="newsTitle" placeholder="Cím..." >
-    </div>
-  </a>
-  <a class="item">
-    <div class="ui purple horizontal label">Leírás</div>
-    <div class="ui input" style="width: 90%;">
-      <input type="text" [(ngModel)]="newsDescription" placeholder="Leírás...">
-    </div>
-  </a>
-  <a class="item">
-    <div class="ui purple horizontal label">Tartalom</div><br/><br/>
-    <div [froalaEditor]="options" [(froalaModel)]="newsContent"></div>
-  </a>
-</div>
 
-<div class="ui buttons margins">
-  <button class="ui positive button" (click)="saveNews()">Mentés</button>
-  <div class="or"></div>
-  <a [routerLink]="['/newsList']"><button class="ui button">Vissza</button></a>
+  <div id="saveSuccess" class="ui positive message">
+    <i class="close icon" (click)="closeSaveDialog()"></i>
+    <div class="header">
+      A hír mentése megtörtént.
+    </div>
+  </div>
+
+  <div id="saveWarning" class="ui yellow message">
+    <i class="close icon" (click)="closeWarningDialog()"></i>
+    <div class="header">
+      Tölts ki legalább a következő mezőket: cím / leírás / tartalom!
+    </div>
+  </div>
+
+  <div class="ui buttons">
+    <button class="ui positive button" (click)="saveNews()">Mentés</button>
+    <div class="or" data-text="vs"></div>
+    <a [routerLink]="['/newsList']"><button class="ui button">Vissza</button></a>
+  </div>
 </div>

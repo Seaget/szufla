@@ -17,7 +17,7 @@ export class NewsEditorComponent implements OnInit {
   public newsContent: string = ''
   public newsCoverImage: string = 'assets/images/noImage.jpg'
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -39,14 +39,33 @@ export class NewsEditorComponent implements OnInit {
   }
 
   public saveNews() {
-    if(this.newsID == null) {
+    $("#saveSuccess").hide(100);
+    $("#saveWarning").hide(100);
+    
+    if(this.newsID == null && this.newsTitle != "" && this.newsDescription != "" && this.newsContent != "") {
       this.http.post('http://localhost/backend.php?action=createNews', JSON.stringify({
         id: null, title: this.newsTitle, cover: this.newsCoverImage, description: this.newsDescription, newsContent: this.newsContent
-      })).subscribe();
-    } else {
+      })).map(
+        data => {
+          $("#saveSuccess").show(100);
+        },
+        error => {
+            console.log('save error');
+        }
+      ).subscribe();
+    } else if(this.newsTitle != "" && this.newsDescription != "" && this.newsContent != "") {
+      console.log('update...');
       this.http.post('http://localhost/backend.php?action=editNews', JSON.stringify({
         id: this.newsID, title: this.newsTitle, cover: this.newsCoverImage, description: this.newsDescription, newsContent: this.newsContent
-      })).subscribe();
+      })).map(
+        data => {
+          $("#saveSuccess").show(100);
+        },
+        error => {
+            console.log('update error');
+        }).subscribe();
+    } else {
+      $("#saveWarning").show(100);
     }
   }
 
@@ -84,12 +103,19 @@ export class NewsEditorComponent implements OnInit {
         headers.append('Accept', 'application/json');
         this.http.post(`http://localhost/backend.php?action=uploadImage`, formData)
             .subscribe(
-                data => { 
-                  console.log('upload success');
+                data => {
                   this.newsCoverImage = data['link'];
                 },
                 error => console.log(error)
             )
     }
-}
+  }
+
+  public closeSaveDialog() {
+    $("#saveSuccess").hide(100);
+  }
+
+  public closeWarningDialog() {
+    $("#saveWarning").hide(100);
+  }
 }

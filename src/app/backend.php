@@ -78,6 +78,50 @@ class mySQLDatabaseManager {
         $this->pdo = null;
     }
 
+    public function createEvent() {
+        $this->init();
+        
+        $request_body = file_get_contents('php://input');
+        $requestedData = json_decode($request_body);
+
+        $stmt = $this->pdo->prepare('INSERT INTO tournaments (title, location, start, end, position) VALUES (:title, :location, :start, :end, :position)');
+
+        $stmt->bindParam(':title', $requestedData->title, PDO::PARAM_STR);
+        $stmt->bindParam(':location', $requestedData->location, PDO::PARAM_STR);
+        $stmt->bindParam(':start', $requestedData->start, PDO::PARAM_STR);
+        $stmt->bindParam(':end', $requestedData->end, PDO::PARAM_STR);
+        $stmt->bindValue(':position', "", PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        $this->pdo = null;
+    }
+
+    public function createMember() {
+        $this->init();
+        
+        $request_body = file_get_contents('php://input');
+        $requestedData = json_decode($request_body);
+
+        $stmt = $this->pdo->prepare('INSERT INTO members (name, number, position, weight, height, nationality, dateofbirth, management, profilePicName, active) 
+            VALUES (:name, :number, :position, :weight, :height, :nationality, :dateofbirth, :management, :profilePicName, :active)');
+
+        $stmt->bindParam(':name', $requestedData->name, PDO::PARAM_STR);
+        $stmt->bindParam(':number', $requestedData->number, PDO::PARAM_INT);
+        $stmt->bindParam(':position', $requestedData->position, PDO::PARAM_STR);
+        $stmt->bindParam(':weight', $requestedData->weight, PDO::PARAM_INT);
+        $stmt->bindParam(':height', $requestedData->height, PDO::PARAM_INT);
+        $stmt->bindParam(':nationality', $requestedData->nationality, PDO::PARAM_STR);
+        $stmt->bindParam(':dateofbirth', $requestedData->dateofbirth, PDO::PARAM_STR);
+        $stmt->bindParam(':management', $requestedData->management, PDO::PARAM_STR);
+        $stmt->bindParam(':profilePicName', $requestedData->profilePicName, PDO::PARAM_STR);
+        $stmt->bindParam(':active', $requestedData->active, PDO::PARAM_INT);
+        
+        $stmt->execute();
+
+        $this->pdo = null;
+    }
+
     public function editNews() {
         $this->init();
         
@@ -96,10 +140,84 @@ class mySQLDatabaseManager {
         $this->pdo = null;
     }
 
+    public function editEvent() {
+        $this->init();
+
+        $request_body = file_get_contents('php://input');
+        $requestedData = json_decode($request_body);
+
+        $stmt = $this->pdo->prepare('UPDATE tournaments SET title = :title, location = :location, start = :start, end = :end WHERE id = :id');
+        $stmt->bindParam(':id', $requestedData->id, PDO::PARAM_INT);
+        $stmt->bindParam(':title', $requestedData->title, PDO::PARAM_STR);
+        $stmt->bindParam(':location', $requestedData->location, PDO::PARAM_STR);
+        $stmt->bindParam(':start', $requestedData->start, PDO::PARAM_STR);
+        $stmt->bindParam(':end', $requestedData->end, PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        $this->pdo = null;
+    }
+
+    public function editMember() {
+        $this->init();
+        
+        $request_body = file_get_contents('php://input');
+        $requestedData = json_decode($request_body);
+
+        $stmt = $this->pdo->prepare('UPDATE members SET name = :name, number = :number, position = :position, weight = :weight,
+            height = :height, nationality = :nationality, dateofbirth = :dateofbirth, management = :management,
+            profilePicName = :profilePicName, active = :active WHERE id = :id');
+        $stmt->bindParam(':id', $requestedData->id, PDO::PARAM_INT);
+        $stmt->bindParam(':name', $requestedData->name, PDO::PARAM_STR);
+        $stmt->bindParam(':number', $requestedData->number, PDO::PARAM_INT);
+        $stmt->bindParam(':position', $requestedData->position, PDO::PARAM_STR);
+        $stmt->bindParam(':weight', $requestedData->weight, PDO::PARAM_INT);
+        $stmt->bindParam(':height', $requestedData->height, PDO::PARAM_INT);
+        $stmt->bindParam(':nationality', $requestedData->nationality, PDO::PARAM_STR);
+        $stmt->bindParam(':dateofbirth', $requestedData->dateofbirth, PDO::PARAM_STR);
+        $stmt->bindParam(':management', $requestedData->management, PDO::PARAM_STR);
+        $stmt->bindParam(':profilePicName', $requestedData->profilePicName, PDO::PARAM_STR);
+        $stmt->bindParam(':active', $requestedData->active, PDO::PARAM_INT);
+        
+        $stmt->execute();
+
+        $this->pdo = null;
+    }
+
     public function getNewsById() {
         $this->init();
 
         $stmt = $this->pdo->prepare('SELECT * FROM news WHERE id = :id');
+
+        $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        header('Content-type: application/json; charset=utf-8;');
+        echo json_encode($results);
+        $this->pdo = null;
+    }
+
+    public function getEventById() {
+        $this->init();
+
+        $stmt = $this->pdo->prepare('SELECT * FROM tournaments WHERE id = :id');
+
+        $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        header('Content-type: application/json; charset=utf-8;');
+        echo json_encode($results);
+        $this->pdo = null;
+    }
+
+    public function getMemberById() {
+        $this->init();
+
+        $stmt = $this->pdo->prepare('SELECT * FROM members WHERE id = :id');
 
         $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
 
@@ -124,13 +242,67 @@ class mySQLDatabaseManager {
         $this->pdo = null;
     }
 
+    public function getEvents() {
+        $this->init();
+
+        $stmt = $this->pdo->prepare('SELECT * FROM tournaments ORDER BY id DESC');
+
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        header('Content-type: application/json; charset=utf-8;');
+        echo json_encode($results);
+        $this->pdo = null;
+    }
+
+    public function getMembers() {
+        $this->init();
+
+        $stmt = $this->pdo->prepare('SELECT * FROM members ORDER BY name ASC');
+
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        header('Content-type: application/json; charset=utf-8;');
+        echo json_encode($results);
+        $this->pdo = null;
+    }
+
     public function deleteNews() {
         $this->init();
         
         $request_body = file_get_contents('php://input');
         $requestedData = json_decode($request_body);
-
+        
         $stmt = $this->pdo->prepare('DELETE FROM news WHERE id = :id');
+        $stmt->bindParam(':id', $requestedData->id, PDO::PARAM_INT);
+        
+        $stmt->execute();
+
+        $this->pdo = null;
+    }
+
+    public function deleteMember() {
+        $this->init();
+        
+        $request_body = file_get_contents('php://input');
+        $requestedData = json_decode($request_body);
+
+        $stmt = $this->pdo->prepare('DELETE FROM members WHERE id = :id');
+        $stmt->bindParam(':id', $requestedData->id, PDO::PARAM_INT);
+        
+        $stmt->execute();
+
+        $this->pdo = null;
+    }
+
+    public function deleteEvent() {
+        $this->init();
+        
+        $request_body = file_get_contents('php://input');
+        $requestedData = json_decode($request_body);
+
+        $stmt = $this->pdo->prepare('DELETE FROM tournaments WHERE id = :id');
         $stmt->bindParam(':id', $requestedData->id, PDO::PARAM_INT);
         
         $stmt->execute();
@@ -144,11 +316,17 @@ class mySQLDatabaseManager {
 
         // Get extension.
         $extension = end($temp);
+        
+        if(isset($_GET['type']) && $_GET['type'] == "member") { 
+            $name = $temp[0] . "." . $extension;
+            $target_dir = "assets/images/members/";
+        } else {
+            // Generate random new name
+            $name = sha1(microtime()) . "." . $extension;
 
-        // Generate random new name
-        $name = sha1(microtime()) . "." . $extension;
+            $target_dir = "uploads/";   
+        }
 
-        $target_dir = "uploads/";
         $target_file = $target_dir . $name;
 
         $uploadOk = 1;
@@ -198,12 +376,33 @@ class mySQLDatabaseManager {
             }
         }
     }
+
+    public function doLogin() {
+        $this->init();
+
+        $request_body = file_get_contents('php://input');
+        $requestedData = json_decode($request_body);
+        
+        $stmt = $this->pdo->prepare('SELECT count(*) as userCount FROM users WHERE username = :username AND password = :password');
+        $stmt->bindParam(':username', $requestedData->username, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $requestedData->password, PDO::PARAM_STR);
+
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $isAuth = ('1' === $results[0]['userCount']);
+        $this->pdo = null;
+
+        header('Access-Control-Allow-Origin: *');
+        header('Content-type: application/json; charset=utf-8;');
+        echo json_encode($isAuth);
+    }
 }
 
 $db = new mySQLDatabaseManager();
 
 switch ($_GET['action']) {
-    case 'getTournaments':      $db->getTournaments(); break;
+    case 'getEvents':           $db->getEvents(); break;
     case 'getPlayers':          $db->getPlayers(); break;
     case 'getManagers':         $db->getManagers(); break;
     case 'getPassives':         $db->getPassives(); break;
@@ -213,6 +412,16 @@ switch ($_GET['action']) {
     case 'getNews':             $db->getNews(); break;
     case 'deleteNews':          $db->deleteNews(); break;
     case 'uploadImage':         $db->uploadImage(); break;
+    case 'getMembers':          $db->getMembers(); break;
+    case 'getMemberById':       $db->getMemberById(); break;
+    case 'editMember':          $db->editMember(); break;
+    case 'createMember':        $db->createMember(); break;
+    case 'deleteMember':        $db->deleteMember(); break;
+    case 'getEventById':        $db->getEventById(); break;
+    case 'editEvent':           $db->editEvent(); break;
+    case 'createEvent':         $db->createEvent(); break;
+    case 'deleteEvent':         $db->deleteEvent(); break;
+    case 'doLogin':             $db->doLogin(); break;
 }
 
 ?>

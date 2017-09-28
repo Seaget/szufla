@@ -22,6 +22,51 @@
     background: transparent;
 }
 
+.toolbar-wrapper {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    height: 25px;
+}
+
+.toolbar-panel {
+    height: 25px;
+    float: right;
+}
+
+.toolbar-item {
+    margin: 0px 0px;
+    text-align: center;
+    position: relative;
+    background: none;
+    width: 50px;
+    display: inline-block;
+    transition: background 200ms;
+    -webkit-transition: background 200ms;
+    transform: skew(-33deg);
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 25px;
+    padding-top: 3px;
+}
+
+.sign.in.icon {
+    color: white;
+}
+
+.toolbar-item:hover {
+    background: #fdbd00;
+}
+
+.toolbar-item:hover .sign.in.icon {
+    color: black;
+}
+
+.sign.icon {
+    transform: skew(33deg);
+}
+
 .menu-top-placeholder {
     width: 100%;
     background-color: rgba(255,255,255,0.15);

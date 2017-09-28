@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { Router } from '@angular/router';
+import { UserService } from '../../UserService';
 
 @Component({
   selector: 'app-start-page',
@@ -8,7 +10,7 @@ import * as $ from 'jquery';
 })
 export class StartPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService:UserService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -17,4 +19,10 @@ export class StartPageComponent implements OnInit {
      $("#menu").toggle("fast");
   }
 
+  actionLogin() {
+    if(this.userService.isAuth())
+      this.router.navigate(['/admin']);
+    else
+      this.router.navigate(['/login']);
+  }
 }

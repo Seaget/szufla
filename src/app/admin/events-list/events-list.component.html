@@ -1,0 +1,38 @@
+<app-header-menu></app-header-menu>
+<div class="menuTitle">
+  Események
+</div>
+
+<div class="container">
+  <table  id="myTable" class="ui yellow table">
+    <thead>
+      <tr>
+        <th>Esemény Neve</th>
+        <th>Helyszín</th>
+        <th>Kezdete</th>
+        <th>Vége</th>
+        <th>Akció</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of events">
+        <tr>
+          <td>{{ item.title }}</td>
+          <td>{{ item.location }}</td>
+          <td>{{ item.start }}</td>
+          <td>{{ item.end }}</td>
+          <td>
+            <a [routerLink]="['/admin/eventEditor/' + item.id]"><button class="mini ui secondary basic button">Szerkeszt</button></a>
+            <button class="mini ui negative basic button" (click)="removeEvent( item.id )">Töröl</button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <a [routerLink]="['/admin/eventEditor/0']">
+    <button class="ui primary button">
+      Új
+    </button>
+  </a>
+</div>

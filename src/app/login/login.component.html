@@ -1,0 +1,27 @@
+<app-header-menu></app-header-menu>
+<div class="menuTitle">
+  Login
+</div>
+
+<div class="ui inverted segment fixSize">
+  <div class="ui inverted form">
+    <div class="two fields">
+      <div class="field">
+        <label>Username</label>
+        <input [(ngModel)]="username" placeholder="username" type="text">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input [(ngModel)]="password" placeholder="pwd" type="password">
+      </div>
+    </div>
+    <div class="ui submit button" (click)="doLogin()">Login</div>
+  </div>
+  <div [ngStyle]=" {'display':display }" class="ui negative message">
+    <i class="close icon"></i>
+    <div class="header">
+      Login failed
+    </div>
+    <p>Username or password is wrong!</p>
+  </div>
+</div>

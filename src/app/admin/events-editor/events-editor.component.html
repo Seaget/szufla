@@ -1,0 +1,61 @@
+<app-header-menu></app-header-menu>
+<div class="menuTitle">
+  Eseményszerkesztő
+</div>
+
+  <div class="container">
+  <div class="ui divided selection list">
+    <div class="item">
+      <div class="ui red horizontal label">ID</div>
+      <div class="ui horizontal label">{{ eventID }}</div>
+    </div>
+    <a class="item">
+      <div class="ui purple horizontal label">Esemény neve</div>
+      <div class="ui input">
+        <input [(ngModel)]="eventTitle" placeholder="Név..." >
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Helyszín</div>
+      <div class="ui input">
+        <input type="text" [(ngModel)]="eventLocation" placeholder="Helyszín...">
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Kezdete</div>
+      <div class="ui input">
+        <material-datepicker [(date)]="eventStart" dateFormat="YYYY-MM-DD" placeholder="Kezdete..."></material-datepicker>
+        <button (click)="setStartToday()">today</button>
+        <button (click)="clearStartDate()">reset</button>
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Vége</div>
+      <div class="ui input">
+        <material-datepicker [(date)]="eventEnd" dateFormat="YYYY-MM-DD" placeholder="Vége..."></material-datepicker>
+        <button (click)="setEndToday()">today</button>
+        <button (click)="clearEndDate()">reset</button>
+      </div>
+    </a>
+  </div>
+
+  <div id="saveSuccess" class="ui positive message">
+    <i class="close icon" (click)="closeSaveDialog()"></i>
+    <div class="header">
+      Az esemény mentése megtörtént.
+    </div>
+  </div>
+
+  <div id="saveWarning" class="ui yellow message">
+    <i class="close icon" (click)="closeWarningDialog()"></i>
+    <div class="header">
+      Töltsd ki a következő mezőket: cím / hely / kezdés és vég dátuma!
+    </div>
+  </div>
+
+  <div class="ui buttons">
+    <button class="ui positive button" (click)="saveEvent()">Mentés</button>
+    <div class="or" data-text="vs"></div>
+    <a [routerLink]="['/eventsList']"><button class="ui button">Vissza</button></a>
+  </div>
+</div>

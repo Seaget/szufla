@@ -67,6 +67,15 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { NewsListComponent } from './admin/news-list/news-list.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ImageUploadModule } from 'angular2-image-upload';
+import { MembersListComponent } from './admin/members-list/members-list.component';
+import { MembersEditorComponent } from './admin/members-editor/members-editor.component';
+import { EventsListComponent } from './admin/events-list/events-list.component';
+import { EventsEditorComponent } from './admin/events-editor/events-editor.component';
+
+import { LoginAccessGuard } from './LoginAccessGuard';
+import { UserService } from './UserService';
+import { LoginComponent } from './login/login.component';
+import { DatepickerModule } from 'angular2-material-datepicker';
 
 const routes: Routes = [
   { path: '',                 redirectTo: 'startPage', pathMatch: 'full' },
@@ -115,9 +124,14 @@ const routes: Routes = [
     ]
   },
   { path: 'contact',        component: ContactComponent },
-  { path: 'admin',          component: AdminComponent },
+  { path: 'admin',          component: AdminComponent, canActivate: [LoginAccessGuard] },
   { path: 'admin/newsEditor/:newsID',component: NewsEditorComponent },
-  { path: 'newsList',       component: NewsListComponent }
+  { path: 'newsList',       component: NewsListComponent },
+  { path: 'membersList',    component: MembersListComponent },
+  { path: 'admin/membersEditor/:memberID',component: MembersEditorComponent },
+  { path: 'eventsList',       component: EventsListComponent },
+  { path: 'admin/eventEditor/:eventID',component: EventsEditorComponent },
+  { path: 'login',          component: LoginComponent }
 ];
 
 @Pipe({ name: 'safeHtml'})
@@ -174,7 +188,12 @@ export class SafeHtmlPipe implements PipeTransform  {
     NewsEditorComponent,
     AdminComponent,
     SafeHtmlPipe,
-    NewsListComponent
+    NewsListComponent,
+    MembersListComponent,
+    MembersEditorComponent,
+    EventsListComponent,
+    EventsEditorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -192,11 +211,14 @@ export class SafeHtmlPipe implements PipeTransform  {
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
     Ng2SmartTableModule,
-    ImageUploadModule.forRoot()
+    ImageUploadModule.forRoot(),
+    DatepickerModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "hu-HU" },
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    LoginAccessGuard,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

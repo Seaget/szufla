@@ -4,13 +4,12 @@
     padding: 0px 20px;
 }
 
-.coverlabel {
+.profileLabel {
     vertical-align: top;
 }
 
-.coverimage {
-    height: 150px;
-    border-radius: 1em;
+.profileImage {
+    max-height: 150px;
 }
 
 #saveSuccess, #saveWarning {

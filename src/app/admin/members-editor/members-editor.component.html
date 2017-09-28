@@ -1,0 +1,95 @@
+<app-header-menu></app-header-menu>
+<div class="menuTitle">
+  Tagszerkesztő
+</div>
+
+<div class="container">
+  <div class="ui divided selection list">
+    <div class="item">
+      <div class="ui red horizontal label">ID</div>
+      <div class="ui horizontal label">{{ memberID }}</div>
+    </div>
+    <a class="item">
+      <div class="ui purple horizontal label profileLabel">Profil Kép</div>
+      <div class="ui input">
+        <img class="profileImage" src="{{ memberProfileImage }}">
+        <input type="file" (change)="fileChange($event)" placeholder="{{ memberProfileImage }}" accept=".png,.jpg,.bmp">
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Név</div>
+      <div class="ui input">
+        <input [(ngModel)]="memberName" placeholder="Név..." >
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Szám</div>
+      <div class="ui input">
+        <input type="text" [(ngModel)]="memberNumber" placeholder="Szám...">
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Pozíció</div>
+      <div class="ui input">
+        <input type="text" [(ngModel)]="memberPosition" placeholder="Pozíció...">
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Súly</div>
+      <div class="ui input">
+        <input type="text" [(ngModel)]="memberWeight" placeholder="Súly...">
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Magasság</div>
+      <div class="ui input">
+        <input type="text" [(ngModel)]="memberHeight" placeholder="Magasság...">
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Nemzetség</div>
+      <div class="ui input">
+        <input type="text" [(ngModel)]="memberNationality" placeholder="Nemzetség...">
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Születési Idő</div>
+      <div class="ui input">
+        <material-datepicker [(date)]="memberDateOfBirth" dateFormat="YYYY-MM-DD" placeholder="Születési Idő..."></material-datepicker>
+        <button (click)="clearDateOfBirthDate()">reset</button>
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Szervezői Poszt</div>
+      <div class="ui input">
+        <input type="text" [(ngModel)]="memberManagement" placeholder="Szervezői Poszt...">
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Aktivitás</div>
+      <div class="ui input">
+        <input type="text" [(ngModel)]="memberActivity" placeholder="Aktivitás...">
+      </div>
+    </a>
+  </div>
+
+  <div id="saveSuccess" class="ui positive message">
+    <i class="close icon" (click)="closeSaveDialog()"></i>
+    <div class="header">
+      A tag mentése megtörtént.
+    </div>
+  </div>
+
+  <div id="saveWarning" class="ui yellow message">
+    <i class="close icon" (click)="closeWarningDialog()"></i>
+    <div class="header">
+      Töltsd ki a név mezőt!
+    </div>
+  </div>
+
+  <div class="ui buttons">
+    <button class="ui positive button" (click)="saveMember()">Mentés</button>
+    <div class="or" data-text="vs"></div>
+    <a [routerLink]="['/membersList']"><button class="ui button">Vissza</button></a>
+  </div>
+</div>
