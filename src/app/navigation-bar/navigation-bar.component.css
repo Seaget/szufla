@@ -67,7 +67,7 @@ color: #00B4FF;
 #nav li:hover ul.subs {
 left: 0;
 top: 40px;
-width: 190px;
+width: 220px;
 -moz-transform: scaleY(1);
 -ms-transform: scaleY(1);
 -o-transform: scaleY(1);

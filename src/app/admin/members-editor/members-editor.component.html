@@ -55,8 +55,10 @@
     <a class="item">
       <div class="ui purple horizontal label">Születési Idő</div>
       <div class="ui input">
-        <material-datepicker [(date)]="memberDateOfBirth" dateFormat="YYYY-MM-DD" placeholder="Születési Idő..."></material-datepicker>
-        <button (click)="clearDateOfBirthDate()">reset</button>
+        <ng-datepicker id="birthDayComp" class="datepicker" [(ngModel)]="memberDateOfBirth" [options]="options"></ng-datepicker>
+        <button type="button" class="ui icon button" (click)="clearBirthDate()">
+            <i class="remove icon"></i>
+        </button>
       </div>
     </a>
     <a class="item">

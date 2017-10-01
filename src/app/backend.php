@@ -78,6 +78,23 @@ class mySQLDatabaseManager {
         $this->pdo = null;
     }
 
+    public function createUser() {
+        $this->init();
+        
+        $request_body = file_get_contents('php://input');
+        $requestedData = json_decode($request_body);
+
+        $stmt = $this->pdo->prepare('INSERT INTO users (username, password, type) VALUES (:username, :password, :type)');
+
+        $stmt->bindParam(':username',   $requestedData->username, PDO::PARAM_STR);
+        $stmt->bindParam(':type',       $requestedData->type, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $requestedData->password, PDO::PARAM_STR);
+        
+        $stmt->execute();
+
+        $this->pdo = null;
+    }
+
     public function createEvent() {
         $this->init();
         
@@ -140,6 +157,30 @@ class mySQLDatabaseManager {
         $this->pdo = null;
     }
 
+    public function editUser() {
+        $this->init();
+        
+        $request_body = file_get_contents('php://input');
+        $requestedData = json_decode($request_body);
+
+        if(isset($requestedData->password)) {
+            $stmt = $this->pdo->prepare('UPDATE users SET username = :username, password = :password, type = :type WHERE id = :id');
+        } else {
+            $stmt = $this->pdo->prepare('UPDATE users SET username = :username, type = :type WHERE id = :id');
+        }
+        $stmt->bindParam(':id',         $requestedData->id, PDO::PARAM_INT);
+        $stmt->bindParam(':username',   $requestedData->username, PDO::PARAM_STR);
+        $stmt->bindParam(':type',       $requestedData->type, PDO::PARAM_STR);
+
+        if(isset($requestedData->password)) {
+            $stmt->bindParam(':password', $requestedData->password, PDO::PARAM_STR);
+        }
+        
+        $stmt->execute();
+
+        $this->pdo = null;
+    }
+
     public function editEvent() {
         $this->init();
 
@@ -188,6 +229,21 @@ class mySQLDatabaseManager {
         $this->init();
 
         $stmt = $this->pdo->prepare('SELECT * FROM news WHERE id = :id');
+
+        $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        header('Content-type: application/json; charset=utf-8;');
+        echo json_encode($results);
+        $this->pdo = null;
+    }
+
+    public function getUserById() {
+        $this->init();
+
+        $stmt = $this->pdo->prepare('SELECT username, type FROM users WHERE id = :id');
 
         $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
 
@@ -255,6 +311,19 @@ class mySQLDatabaseManager {
         $this->pdo = null;
     }
 
+    public function getUsers() {
+        $this->init();
+
+        $stmt = $this->pdo->prepare('SELECT * FROM users ORDER BY username ASC');
+
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        header('Content-type: application/json; charset=utf-8;');
+        echo json_encode($results);
+        $this->pdo = null;
+    }
+
     public function getMembers() {
         $this->init();
 
@@ -275,6 +344,20 @@ class mySQLDatabaseManager {
         $requestedData = json_decode($request_body);
         
         $stmt = $this->pdo->prepare('DELETE FROM news WHERE id = :id');
+        $stmt->bindParam(':id', $requestedData->id, PDO::PARAM_INT);
+        
+        $stmt->execute();
+
+        $this->pdo = null;
+    }
+
+    public function deleteUser() {
+        $this->init();
+        
+        $request_body = file_get_contents('php://input');
+        $requestedData = json_decode($request_body);
+        
+        $stmt = $this->pdo->prepare('DELETE FROM users WHERE id = :id');
         $stmt->bindParam(':id', $requestedData->id, PDO::PARAM_INT);
         
         $stmt->execute();
@@ -383,19 +466,18 @@ class mySQLDatabaseManager {
         $request_body = file_get_contents('php://input');
         $requestedData = json_decode($request_body);
         
-        $stmt = $this->pdo->prepare('SELECT count(*) as userCount FROM users WHERE username = :username AND password = :password');
+        $stmt = $this->pdo->prepare('SELECT id, type FROM users WHERE username = :username AND password = :password');
         $stmt->bindParam(':username', $requestedData->username, PDO::PARAM_STR);
         $stmt->bindParam(':password', $requestedData->password, PDO::PARAM_STR);
 
         $stmt->execute();
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $isAuth = ('1' === $results[0]['userCount']);
         $this->pdo = null;
 
         header('Access-Control-Allow-Origin: *');
         header('Content-type: application/json; charset=utf-8;');
-        echo json_encode($isAuth);
+        echo json_encode($results[0]);
     }
 }
 
@@ -422,6 +504,12 @@ switch ($_GET['action']) {
     case 'createEvent':         $db->createEvent(); break;
     case 'deleteEvent':         $db->deleteEvent(); break;
     case 'doLogin':             $db->doLogin(); break;
+    
+    case 'getUsers':            $db->getUsers(); break;
+    case 'getUserById':         $db->getUserById(); break;
+    case 'editUser':            $db->editUser(); break;
+    case 'createUser':          $db->createUser(); break;
+    case 'deleteUser':          $db->deleteUser(); break;
 }
 
 ?>

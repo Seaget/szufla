@@ -1,0 +1,69 @@
+<app-header-menu></app-header-menu>
+<div class="menuTitle">
+  Felhasználó-szerkesztő
+</div>
+
+<div class="container">
+  <div class="ui divided selection list">
+    <div class="item">
+      <div class="ui red horizontal label">ID</div>
+      <div class="ui horizontal label">{{ userID }}</div>
+    </div>
+    <a class="item">
+      <div class="ui purple horizontal label">Felhasználó Név</div>
+      <div class="ui input">
+        <input [(ngModel)]="userName" placeholder="Username..." >
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Jelszó</div>
+      <div class="ui input">
+        <input type="password" [(ngModel)]="userPassword" placeholder="Password...">
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Jelszó Megerősítés</div>
+      <div class="ui input">
+        <input type="password" [(ngModel)]="userConfirmPassword" placeholder="Confirm Password...">
+      </div>
+    </a>
+    <a *ngIf="isAdmin" class="item">
+      <div class="ui purple horizontal label">Típus</div>
+      <div class="ui input">
+        <div class="ui segment">
+            <sui-select placeholder="Típus" [(ngModel)]="userTypeString">
+                <sui-select-option value="User"></sui-select-option>
+                <sui-select-option value="Admin"></sui-select-option>
+            </sui-select>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div id="saveSuccess" class="ui positive message">
+    <i class="close icon" (click)="closeSaveDialog()"></i>
+    <div class="header">
+      A felhasználó mentése megtörtént.
+    </div>
+  </div>
+
+  <div id="saveWarning" class="ui yellow message">
+    <i class="close icon" (click)="closeWarningDialog()"></i>
+    <div class="header">
+      Tölts ki minden mezőt!
+    </div>
+  </div>
+
+  <div id="passwordWarning" class="ui yellow message">
+    <i class="close icon" (click)="closeWarningPasswordDialog()"></i>
+    <div class="header">
+      A jelszavak nem egyeznek!
+    </div>
+  </div>
+
+  <div class="ui buttons">
+    <button class="ui positive button" (click)="saveUser()">Mentés</button>
+    <div class="or" data-text="vs"></div>
+    <a [routerLink]="isAdmin ? ['/usersList'] : ['/admin']"><button class="ui button">Vissza</button></a>
+  </div>
+</div>

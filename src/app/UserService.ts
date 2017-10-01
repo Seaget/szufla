@@ -16,11 +16,11 @@ export class UserService {
         let pref = "szufla2011_";
         return this.http.post('http://localhost/backend.php?action=doLogin', JSON.stringify({ username: username, password: Md5.hashStr(pref.concat(password)) }))
             .map((response: Response) => {
-                // login successful if there's a jwt token in the response
                 let user = response.json();
-                if (user && user == true) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('loggedUser', JSON.stringify(user));
+                if (user && user.id > 0) {
+                    localStorage.setItem('loggedUser', "true");
+                    localStorage.setItem('loggedUserType', user.type);
+                    localStorage.setItem('loggedUserId', user.id);
                 }
             });
     }
@@ -28,5 +28,15 @@ export class UserService {
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('loggedUser');
+        localStorage.removeItem('loggedUserType');
+        localStorage.removeItem('loggedUserId');
+    }
+
+    isAdmin() {
+        return (localStorage.getItem('loggedUserType') == "2");
+    }
+
+    getUserId() {
+        return localStorage.getItem('loggedUserId');
     }
 }

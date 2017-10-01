@@ -31,7 +31,7 @@
     </h2>
   </a>
 
-  <a [routerLink]="['/adminsList']">
+  <a [routerLink]="isAdmin ? ['/usersList'] : ['/admin/userEditor/' + userId]">
     <h2 class="ui icon floated header">
       <i class="doctor icon"></i>
       <div class="content">

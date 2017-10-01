@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { RequestOptions } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import * as $ from 'jquery';
+import { DatepickerOptions } from 'ng2-datepicker';
 
 @Component({
   selector: 'app-members-editor',
@@ -43,9 +44,19 @@ export class MembersEditorComponent implements OnInit {
         this.memberWeight = memberData[0].weight;
         this.memberHeight = memberData[0].height;
         this.memberNationality = memberData[0].nationality;
-        this.memberDateOfBirth = new Date(memberData[0].dateofbirth);
+        
+        if(memberData[0].dateofbirth != null)
+          this.memberDateOfBirth = new Date(memberData[0].dateofbirth);
+        else
+          this.memberDateOfBirth = null;
+        
         this.memberManagement = memberData[0].management;
         this.memberActivity = memberData[0].active;
+
+        if(this.memberDateOfBirth == null) {
+          let obj: HTMLInputElement = <HTMLInputElement>($("#birthDayComp :input")[0]);
+          obj.value = "";
+        }
       });
     }
   }
@@ -54,10 +65,16 @@ export class MembersEditorComponent implements OnInit {
     $("#saveSuccess").hide(100);
     $("#saveWarning").hide(100);
 
+    let tmpDateOfBirth = null; 
+    if(this.memberDateOfBirth != null) {
+      tmpDateOfBirth = new Date(new Date(this.memberDateOfBirth).getTime() + (60*60*24*1000));
+    }
+
     if(this.memberID == null && this.memberName != "") {
       this.http.post('http://localhost/backend.php?action=createMember', JSON.stringify({
         id: null, name: this.memberName, profilePicName: this.memberProfileImage, number: this.memberNumber, position: this.memberPosition,
-        weight: this.memberWeight, height: this.memberHeight, nationality: this.memberNationality, dateofbirth: this.memberDateOfBirth.toISOString().substring(0, 10),
+        weight: this.memberWeight, height: this.memberHeight, nationality: this.memberNationality, 
+        dateofbirth: tmpDateOfBirth == null ? null : tmpDateOfBirth.toISOString().substring(0, 10),
         management: this.memberManagement, active: this.memberActivity
       })).map(
         data => {
@@ -69,7 +86,8 @@ export class MembersEditorComponent implements OnInit {
     } else if(this.memberName != "") {
       this.http.post('http://localhost/backend.php?action=editMember', JSON.stringify({
         id: this.memberID, name: this.memberName, profilePicName: this.memberProfileImage, number: this.memberNumber, position: this.memberPosition,
-        weight: this.memberWeight, height: this.memberHeight, nationality: this.memberNationality, dateofbirth: this.memberDateOfBirth.toISOString().substring(0, 10),
+        weight: this.memberWeight, height: this.memberHeight, nationality: this.memberNationality, 
+        dateofbirth: tmpDateOfBirth == null ? null : tmpDateOfBirth.toISOString().substring(0, 10),
         management: this.memberManagement, active: this.memberActivity
       })).map(
         data => {
@@ -114,7 +132,17 @@ export class MembersEditorComponent implements OnInit {
     $("#saveWarning").hide(100);
   }
 
-  clearDateOfBirthDate() {
+  options: DatepickerOptions = {
+    minYear: 1950,
+    maxYear: 2030,
+    displayFormat: 'YYYY-MM-DD',
+    barTitleFormat: 'MMMM YYYY',
+    firstCalendarDay: 0 // 0 - Sunday, 1 - Monday
+  };
+
+  clearBirthDate() {
     this.memberDateOfBirth = null;
+    let obj: HTMLInputElement = <HTMLInputElement>($("#birthDayComp :input")[0]);
+    obj.value = "";
   }
 }

@@ -43,7 +43,6 @@ import { UltimateControllerComponent } from './ultimate/ultimate-controller/ulti
 
 import { CalendarModule } from 'angular-calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WhatIsUltimateComponent } from './ultimate/what-is-ultimate/what-is-ultimate.component';
 import { SotgComponent } from './ultimate/sotg/sotg.component';
 import { LinkKeeperComponent } from './link-keeper/link-keeper.component';
@@ -75,7 +74,10 @@ import { EventsEditorComponent } from './admin/events-editor/events-editor.compo
 import { LoginAccessGuard } from './LoginAccessGuard';
 import { UserService } from './UserService';
 import { LoginComponent } from './login/login.component';
-import { DatepickerModule } from 'angular2-material-datepicker';
+import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
+import { NgDatepickerModule } from 'ng2-datepicker';
+import { UserListComponent } from './admin/user-list/user-list.component';
+import { UserEditorComponent } from './admin/user-editor/user-editor.component';
 
 const routes: Routes = [
   { path: '',                 redirectTo: 'startPage', pathMatch: 'full' },
@@ -129,9 +131,11 @@ const routes: Routes = [
   { path: 'newsList',       component: NewsListComponent },
   { path: 'membersList',    component: MembersListComponent },
   { path: 'admin/membersEditor/:memberID',component: MembersEditorComponent },
-  { path: 'eventsList',       component: EventsListComponent },
+  { path: 'eventsList',     component: EventsListComponent },
   { path: 'admin/eventEditor/:eventID',component: EventsEditorComponent },
-  { path: 'login',          component: LoginComponent }
+  { path: 'login',          component: LoginComponent },
+  { path: 'usersList',      component: UserListComponent },
+  { path: 'admin/userEditor/:userID',component: UserEditorComponent }
 ];
 
 @Pipe({ name: 'safeHtml'})
@@ -193,7 +197,9 @@ export class SafeHtmlPipe implements PipeTransform  {
     MembersEditorComponent,
     EventsListComponent,
     EventsEditorComponent,
-    LoginComponent
+    LoginComponent,
+    UserListComponent,
+    UserEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -205,14 +211,14 @@ export class SafeHtmlPipe implements PipeTransform  {
     }),
     CalendarModule.forRoot(),
     BrowserAnimationsModule,
-    NgbModule.forRoot(),
     SuiModule,
     HttpClientModule,
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
     Ng2SmartTableModule,
     ImageUploadModule.forRoot(),
-    DatepickerModule
+    NgxMyDatePickerModule.forRoot(),
+    NgDatepickerModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "hu-HU" },

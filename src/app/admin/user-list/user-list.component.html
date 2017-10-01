@@ -1,0 +1,35 @@
+<app-header-menu></app-header-menu>
+<div class="menuTitle">
+  Falhasználók
+</div>
+
+<div class="container">
+  <table class="ui yellow table">
+    <thead>
+      <tr>
+        <th>Név</th>
+        <th>Típus</th>
+        <th>Akció</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of users">
+        <tr>
+          <td>{{ item.username }}</td>
+          <td *ngIf="item.type==1">User</td>
+          <td *ngIf="item.type==2">Admin</td>
+          <td>
+            <a [routerLink]="['/admin/userEditor/' + item.id]"><button class="mini ui secondary basic button">Szerkeszt</button></a>
+            <button class="mini ui negative basic button" (click)="removeUser( item.id )">Töröl</button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <a [routerLink]="['/admin/userEditor/0']">
+    <button class="ui primary button">
+      Új
+    </button>
+  </a>
+</div>

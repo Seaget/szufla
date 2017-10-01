@@ -15,3 +15,7 @@
 #saveSuccess, #saveWarning {
     display: none;
 }
+
+.datepicker {
+    z-index: 5;
+}

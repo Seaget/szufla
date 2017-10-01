@@ -12,13 +12,13 @@
       </div>
       <div class="field">
         <label>Password</label>
-        <input [(ngModel)]="password" placeholder="pwd" type="password">
+        <input [(ngModel)]="password" placeholder="pwd" type="password" (keyup.enter)="doLogin()">
       </div>
     </div>
     <div class="ui submit button" (click)="doLogin()">Login</div>
   </div>
-  <div [ngStyle]=" {'display':display }" class="ui negative message">
-    <i class="close icon"></i>
+  <div id="passwordWarning" [ngStyle]=" {'display':display }" class="ui negative message">
+    <i class="close icon" (click)="closeWarningPasswordDialog()"></i>
     <div class="header">
       Login failed
     </div>

@@ -31,7 +31,11 @@ export class LoginComponent implements OnInit {
                     }
                 },
                 error => {
-                    console.log('bad login');
+                    this.display = 'block';
                 });
-    }
+  }
+
+  public closeWarningPasswordDialog() {
+    this.display = 'none';
+  }
 }

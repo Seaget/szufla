@@ -24,17 +24,19 @@
     <a class="item">
       <div class="ui purple horizontal label">Kezdete</div>
       <div class="ui input">
-        <material-datepicker [(date)]="eventStart" dateFormat="YYYY-MM-DD" placeholder="Kezdete..."></material-datepicker>
-        <button (click)="setStartToday()">today</button>
-        <button (click)="clearStartDate()">reset</button>
+        <ng-datepicker id="startDayComp" class="datepicker" [(ngModel)]="eventStart" [options]="options"></ng-datepicker>
+        <button type="button" class="ui icon button" (click)="clearStartDate()">
+            <i class="remove icon"></i>
+        </button>
       </div>
     </a>
     <a class="item">
       <div class="ui purple horizontal label">Vége</div>
       <div class="ui input">
-        <material-datepicker [(date)]="eventEnd" dateFormat="YYYY-MM-DD" placeholder="Vége..."></material-datepicker>
-        <button (click)="setEndToday()">today</button>
-        <button (click)="clearEndDate()">reset</button>
+        <ng-datepicker id="endDayComp" class="datepicker" [(ngModel)]="eventEnd" [options]="options"></ng-datepicker>
+        <button type="button" class="ui icon button" (click)="clearEndDate()">
+            <i class="remove icon"></i>
+        </button>
       </div>
     </a>
   </div>

@@ -6,3 +6,7 @@
 .badLogin {
     display: none;
 }
+
+#passwordWarning {
+    display: none;
+}

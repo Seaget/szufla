@@ -11,6 +11,9 @@ export class AdminComponent implements OnInit {
 
   constructor(private userService:UserService, private router: Router) { }
 
+  public isAdmin: Boolean = this.userService.isAdmin();
+  public userId: string   = this.userService.getUserId();
+
   ngOnInit() {
   }
 
