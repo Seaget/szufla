@@ -24,17 +24,13 @@
     <a class="item">
       <div class="ui purple horizontal label">Kezdete</div>
       <div class="ui input">
-        <material-datepicker [(date)]="eventStart" dateFormat="YYYY-MM-DD" placeholder="Kezdete..."></material-datepicker>
-        <button (click)="setStartToday()">today</button>
-        <button (click)="clearStartDate()">reset</button>
+        <owl-date-time [(ngModel)]="eventStart" [dateFormat]="'YYYY-MM-DD'" [placeHolder]="'yyyy/mm/dd'"></owl-date-time>
       </div>
     </a>
     <a class="item">
       <div class="ui purple horizontal label">Vége</div>
       <div class="ui input">
-        <material-datepicker [(date)]="eventEnd" dateFormat="YYYY-MM-DD" placeholder="Vége..."></material-datepicker>
-        <button (click)="setEndToday()">today</button>
-        <button (click)="clearEndDate()">reset</button>
+        <owl-date-time [(ngModel)]="eventEnd"></owl-date-time>
       </div>
     </a>
   </div>

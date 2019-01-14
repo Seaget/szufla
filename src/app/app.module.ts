@@ -75,7 +75,7 @@ import { EventsEditorComponent } from './admin/events-editor/events-editor.compo
 import { LoginAccessGuard } from './LoginAccessGuard';
 import { UserService } from './UserService';
 import { LoginComponent } from './login/login.component';
-import { DatepickerModule } from 'angular2-material-datepicker';
+import { DateTimePickerModule } from 'ng-pick-datetime';
 
 const routes: Routes = [
   { path: '',                 redirectTo: 'startPage', pathMatch: 'full' },
@@ -212,7 +212,7 @@ export class SafeHtmlPipe implements PipeTransform  {
     FroalaViewModule.forRoot(),
     Ng2SmartTableModule,
     ImageUploadModule.forRoot(),
-    DatepickerModule
+    DateTimePickerModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "hu-HU" },

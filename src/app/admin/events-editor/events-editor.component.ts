@@ -42,9 +42,12 @@ export class EventsEditorComponent implements OnInit {
     $("#saveSuccess").hide(100);
     $("#saveWarning").hide(100);
 
+    let tmpEventStart = new Date(new Date(this.eventStart).getTime() + (60*60*24*1000));
+    let tmpEventEnd   = new Date(new Date(this.eventEnd).getTime() + (60*60*24*1000));
+
     if(this.eventID == null && this.eventTitle != "" && this.eventLocation != "" && this.eventStart != null && this.eventEnd != null) {
       this.http.post('http://localhost/backend.php?action=createEvent', JSON.stringify({
-        id: null, title: this.eventTitle, location: this.eventLocation, start: this.eventStart.toISOString().substring(0, 10), end: this.eventEnd.toISOString().substring(0, 10)
+        id: null, title: this.eventTitle, location: this.eventLocation, start: tmpEventStart.toISOString().substring(0, 10), end: tmpEventEnd.toISOString().substring(0, 10)
       })).map(
         data => {
           console.log(data);
@@ -55,7 +58,7 @@ export class EventsEditorComponent implements OnInit {
         }).subscribe();
     } else if(this.eventTitle != "" && this.eventLocation != "" && this.eventStart != null && this.eventEnd != null) {
       this.http.post('http://localhost/backend.php?action=editEvent', JSON.stringify({
-        id: this.eventID, title: this.eventTitle, location: this.eventLocation, start: this.eventStart.toISOString().substring(0, 10), end: this.eventEnd.toISOString().substring(0, 10)
+        id: this.eventID, title: this.eventTitle, location: this.eventLocation, start: tmpEventStart.toISOString().substring(0, 10), end: tmpEventEnd.toISOString().substring(0, 10)
       })).map(
         data => {
           $("#saveSuccess").show(100);

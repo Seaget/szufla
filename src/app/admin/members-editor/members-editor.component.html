@@ -55,7 +55,7 @@
     <a class="item">
       <div class="ui purple horizontal label">Születési Idő</div>
       <div class="ui input">
-        <material-datepicker [(date)]="memberDateOfBirth" dateFormat="YYYY-MM-DD" placeholder="Születési Idő..."></material-datepicker>
+        <owl-date-time [(ngModel)]="memberDateOfBirth" [dateFormat]="'YYYY/MM/DD'" ng-model-options="{timezone:'UTC'}" [placeHolder]="'yyyy/mm/dd'"></owl-date-time>
         <button (click)="clearDateOfBirthDate()">reset</button>
       </div>
     </a>
