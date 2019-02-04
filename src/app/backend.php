@@ -3,15 +3,15 @@
 class mySQLDatabaseManager {
     private $pdo = null;
     
-    private $host           = "localhost";
-    private $username       = "root";
-    private $password       = "asdasd";
-    private $dbname         = "szufla";
+    private $host           = "c057um.forpsi.com";
+    private $username       = "b3764";
+    private $password       = "23@KCu5B";
+    private $dbname         = "b3764";
     private $charset        = 'utf8';
 
     public function init() {
         header('Access-Control-Allow-Origin: *');
-        $this->pdo = new PDO('mysql:host=localhost;dbname=szufla;charset=utf8', 'root', 'asdasd');
+        $this->pdo = new PDO('mysql:host=c057um.forpsi.com;dbname=b3764;charset=utf8', 'b3764', '23@KCu5B');
     }
 
     public function getPlayers() {

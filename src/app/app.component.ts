@@ -6,6 +6,7 @@ import * as $ from 'jquery';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'app works!';
 
@@ -13,3 +14,6 @@ export class AppComponent {
     outlet.scrollTop = 0;
   }
 }
+
+
+export var urlStr:string = "ultimateszeged.hu";

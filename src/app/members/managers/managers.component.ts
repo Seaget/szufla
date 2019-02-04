@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { urlStr } from 'app/app.component';
 
 @Component({
   selector: 'app-managers',
@@ -11,7 +12,7 @@ export class ManagersComponent implements OnInit {
 
   constructor(private http: HttpClient) {
     // Make the HTTP request:
-    this.http.get('http://localhost/backend.php?action=getManagers').subscribe(managersData => {
+    this.http.get('http://' + urlStr + '/backend.php?action=getManagers').subscribe(managersData => {
       this.managersData = managersData;
     });
   }

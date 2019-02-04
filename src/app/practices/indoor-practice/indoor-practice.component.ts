@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndoorPracticeComponent implements OnInit {
 
-  title: string = 'Gellért - Csarnok';
-  lat: number = 46.234056;
-  lng: number = 20.173423;
+  title1: string = 'Etelka Sori Sportcsarnok';
+  lat1: number = 46.2601161;
+  lng1: number = 20.1718104;
   zoom: number = 13;
+
+  title2: string = 'Piarista Gimnázium Sportcsarnok';
+  lat2: number = 46.2693805;
+  lng2: number = 20.140108;
 
   constructor() { }
 
