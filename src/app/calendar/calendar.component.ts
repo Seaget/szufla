@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery';
+import { urlStr } from 'app/app.component';
 
 import {
   ChangeDetectionStrategy,
@@ -48,7 +49,7 @@ export class CalendarComponent implements OnInit {
   ngOnInit() {
     // Make the HTTP request:
     //this.http.get('/api/items').subscribe(data => {
-    this.http.get('http://localhost/backend.php?action=getEvents').subscribe(data => {
+    this.http.get('http://' + urlStr + '/backend.php?action=getEvents').subscribe(data => {
       // Read the result field from the JSON response.
       let copiedEvents = this.events;
 

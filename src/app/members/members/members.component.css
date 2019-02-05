@@ -1,5 +1,6 @@
 .s-members-container {
     width: 100%;
+    display: table;
 }
 
 .members {
@@ -42,12 +43,29 @@ a {
     color: #fff;
     background: #363533;
 }
-.s-members-container {
-    display: table;
-}
 
 .s-members {
     max-width: 1350px;
     display: block;
     margin: 10px auto;
+}
+
+.s-members-container:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 15em;
+    width: 100%;
+    height: 88vh;
+    z-index: -1;
+    opacity: 0.05;
+    background: url('https://www.discace.com/frisbees/frisbee-discs/discace/disc-ace-wall1.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
 }

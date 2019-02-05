@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { RequestOptions } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import * as $ from 'jquery';
+import { urlStr } from 'app/app.component';
 
 @Component({
   selector: 'app-members-editor',
@@ -35,7 +36,7 @@ export class MembersEditorComponent implements OnInit {
     });
 
     if(this.memberID != null) {
-      this.http.get('http://localhost/backend.php?action=getMemberById&id='+this.memberID).subscribe(memberData => {
+      this.http.get('http://' + urlStr + '/backend.php?action=getMemberById&id='+this.memberID).subscribe(memberData => {
         this.memberName = memberData[0].name;
         this.memberNumber = memberData[0].number;
         this.memberPosition = memberData[0].position;
@@ -55,7 +56,7 @@ export class MembersEditorComponent implements OnInit {
     $("#saveWarning").hide(100);
 
     if(this.memberID == null && this.memberName != "") {
-      this.http.post('http://localhost/backend.php?action=createMember', JSON.stringify({
+      this.http.post('http://' + urlStr + '/backend.php?action=createMember', JSON.stringify({
         id: null, name: this.memberName, profilePicName: this.memberProfileImage, number: this.memberNumber, position: this.memberPosition,
         weight: this.memberWeight, height: this.memberHeight, nationality: this.memberNationality, dateofbirth: this.memberDateOfBirth.toISOString().substring(0, 10),
         management: this.memberManagement, active: this.memberActivity
@@ -67,7 +68,7 @@ export class MembersEditorComponent implements OnInit {
             console.log('update error');
         }).subscribe();
     } else if(this.memberName != "") {
-      this.http.post('http://localhost/backend.php?action=editMember', JSON.stringify({
+      this.http.post('http://' + urlStr + '/backend.php?action=editMember', JSON.stringify({
         id: this.memberID, name: this.memberName, profilePicName: this.memberProfileImage, number: this.memberNumber, position: this.memberPosition,
         weight: this.memberWeight, height: this.memberHeight, nationality: this.memberNationality, dateofbirth: this.memberDateOfBirth.toISOString().substring(0, 10),
         management: this.memberManagement, active: this.memberActivity
@@ -93,7 +94,7 @@ export class MembersEditorComponent implements OnInit {
         /** No need to include Content-Type in Angular 4 */
         headers.append('Content-Type', 'multipart/form-data');
         headers.append('Accept', 'application/json');
-        this.http.post(`http://localhost/backend.php?action=uploadImage&type=member`, formData)
+        this.http.post(`http://' + urlStr + '/backend.php?action=uploadImage&type=member`, formData)
             .subscribe(
                 data => { 
                   console.log('upload success');

@@ -3,6 +3,7 @@ import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { Md5 } from 'ts-md5/dist/md5';
+import { urlStr } from 'app/app.component';
 
 @Injectable()
 export class UserService {
@@ -14,7 +15,7 @@ export class UserService {
 
     login(username: string, password: string) {
         let pref = "szufla2011_";
-        return this.http.post('http://localhost/backend.php?action=doLogin', JSON.stringify({ username: username, password: Md5.hashStr(pref.concat(password)) }))
+        return this.http.post('http://' + urlStr + '/backend.php?action=doLogin', JSON.stringify({ username: username, password: Md5.hashStr(pref.concat(password)) }))
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let user = response.json();

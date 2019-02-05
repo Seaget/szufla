@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { RequestOptions } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import * as $ from 'jquery';
+import { urlStr } from 'app/app.component';
 
 @Component({
   selector: 'app-news-editor',
@@ -29,7 +30,7 @@ export class NewsEditorComponent implements OnInit {
     });
 
     if(this.newsID != null) {
-      this.http.get('http://localhost/backend.php?action=getNewsById&id='+this.newsID).subscribe(newsData => {
+      this.http.get('http://' + urlStr + '/backend.php?action=getNewsById&id='+this.newsID).subscribe(newsData => {
         this.newsTitle = newsData[0].title;
         this.newsDescription = newsData[0].description;
         this.newsContent = newsData[0].content;
@@ -43,7 +44,7 @@ export class NewsEditorComponent implements OnInit {
     $("#saveWarning").hide(100);
     
     if(this.newsID == null && this.newsTitle != "" && this.newsDescription != "" && this.newsContent != "") {
-      this.http.post('http://localhost/backend.php?action=createNews', JSON.stringify({
+      this.http.post('http://' + urlStr + '/backend.php?action=createNews', JSON.stringify({
         id: null, title: this.newsTitle, cover: this.newsCoverImage, description: this.newsDescription, newsContent: this.newsContent
       })).map(
         data => {
@@ -55,7 +56,7 @@ export class NewsEditorComponent implements OnInit {
       ).subscribe();
     } else if(this.newsTitle != "" && this.newsDescription != "" && this.newsContent != "") {
       console.log('update...');
-      this.http.post('http://localhost/backend.php?action=editNews', JSON.stringify({
+      this.http.post('http://' + urlStr + '/backend.php?action=editNews', JSON.stringify({
         id: this.newsID, title: this.newsTitle, cover: this.newsCoverImage, description: this.newsDescription, newsContent: this.newsContent
       })).map(
         data => {
@@ -101,7 +102,7 @@ export class NewsEditorComponent implements OnInit {
         /** No need to include Content-Type in Angular 4 */
         headers.append('Content-Type', 'multipart/form-data');
         headers.append('Accept', 'application/json');
-        this.http.post(`http://localhost/backend.php?action=uploadImage`, formData)
+        this.http.post(`http://ultimateszeged.hu/backend.php?action=uploadImage`, formData)
             .subscribe(
                 data => {
                   this.newsCoverImage = data['link'];

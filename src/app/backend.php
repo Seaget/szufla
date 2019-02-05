@@ -10,7 +10,7 @@ class mySQLDatabaseManager {
     private $charset        = 'utf8';
 
     public function init() {
-        header('Access-Control-Allow-Origin: *');
+//        header('Access-Control-Allow-Origin: *');
         $this->pdo = new PDO('mysql:host=c057um.forpsi.com;dbname=b3764;charset=utf8', 'b3764', '23@KCu5B');
     }
 
@@ -362,18 +362,20 @@ class mySQLDatabaseManager {
         if ($uploadOk == 0) {
             echo "Sorry, your file was not uploaded.";
         // if everything is ok, try to upload file
-        } else {
+        } else {/*
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                 //echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
                 
                 // Generate response.
                 $response = new StdClass;
                 $response->link = "http://localhost/" . $target_file;
-                echo stripslashes(json_encode($response));
+                echo stripslashes(json_encode($response));*/
+            /*    echo "Uploading...";
 
             } else {
                 echo "Sorry, there was an error uploading your file.";
-            }
+            }*/
+            echo "Uploading...";
         }
     }
 

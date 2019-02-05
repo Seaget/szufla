@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { RequestOptions } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import * as $ from 'jquery';
+import { urlStr } from 'app/app.component';
 
 @Component({
   selector: 'app-article',
@@ -30,7 +31,7 @@ export class ArticleComponent implements OnInit {
       });
   
       if(this.newsID != null) {
-        this.http.get('http://localhost/backend.php?action=getNewsById&id='+this.newsID).subscribe(newsData => {
+        this.http.get('http://' + urlStr + '/backend.php?action=getNewsById&id='+this.newsID).subscribe(newsData => {
           this.newsTitle = newsData[0].title;
           this.newsDescription = newsData[0].description;
           this.newsContent = newsData[0].content;

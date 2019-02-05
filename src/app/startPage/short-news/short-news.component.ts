@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { urlStr } from 'app/app.component';
 
 @Component({
   selector: 'app-short-news',
@@ -15,7 +16,7 @@ export class ShortNewsComponent implements OnInit {
     this.newsData2 = {date: '', title: '', cover: '', description:''};
 
     // Make the HTTP request:
-    this.http.get('http://localhost/backend.php?action=getNews').subscribe(newsData => {
+    this.http.get('http://' + urlStr + '/backend.php?action=getNews').subscribe(newsData => {
       if(newsData[0] != null) this.newsData1 = newsData[0];
       if(newsData[1] != null) this.newsData2 = newsData[1];
     });

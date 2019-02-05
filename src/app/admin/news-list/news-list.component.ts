@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { urlStr } from 'app/app.component';
 
 @Component({
   selector: 'app-news-list',
@@ -13,13 +14,13 @@ export class NewsListComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('http://localhost/backend.php?action=getNews').subscribe(news => {
+    this.http.get('http://' + urlStr + '/backend.php?action=getNews').subscribe(news => {
       this.news = news;
     });
   }
 
   public removeNews(newsID) {
-    this.http.post('http://localhost/backend.php?action=deleteNews', JSON.stringify({
+    this.http.post('http://' + urlStr + '/backend.php?action=deleteNews', JSON.stringify({
       id: newsID
     })).subscribe();
     location.reload();

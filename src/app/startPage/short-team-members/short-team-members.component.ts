@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { urlStr } from 'app/app.component';
 
 @Component({
   selector: 'app-short-team-members',
@@ -11,7 +12,7 @@ export class ShortTeamMembersComponent implements OnInit {
 
   constructor(private http: HttpClient) {
     // Make the HTTP request:
-    this.http.get('http://localhost/backend.php?action=getPlayers&limit=4').subscribe(playersData => {
+    this.http.get('http://' + urlStr + '/backend.php?action=getPlayers&limit=4').subscribe(playersData => {
       this.playersData = playersData;
     });
   }

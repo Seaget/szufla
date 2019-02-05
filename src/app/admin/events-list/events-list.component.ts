@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { urlStr } from 'app/app.component';
 
 @Component({
   selector: 'app-events-list',
@@ -13,13 +14,13 @@ export class EventsListComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('http://localhost/backend.php?action=getEvents').subscribe(events => {
+    this.http.get('http://' + urlStr + '/backend.php?action=getEvents').subscribe(events => {
       this.events = events;
     });
   }
 
   public removeEvent(eventID) {
-    this.http.post('http://localhost/backend.php?action=deleteEvent', JSON.stringify({
+    this.http.post('http://' + urlStr + '/backend.php?action=deleteEvent', JSON.stringify({
       id: eventID
     })).subscribe();
     location.reload();
