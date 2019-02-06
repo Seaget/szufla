@@ -362,20 +362,20 @@ class mySQLDatabaseManager {
         if ($uploadOk == 0) {
             echo "Sorry, your file was not uploaded.";
         // if everything is ok, try to upload file
-        } else {/*
+        } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                 //echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
                 
                 // Generate response.
                 $response = new StdClass;
-                $response->link = "http://localhost/" . $target_file;
-                echo stripslashes(json_encode($response));*/
-            /*    echo "Uploading...";
+                $response->link = $target_file;
+                echo stripslashes(json_encode($response));
+            //    echo "Uploading...";
 
             } else {
                 echo "Sorry, there was an error uploading your file.";
-            }*/
-            echo "Uploading...";
+            }
+            //echo "Uploading...";
         }
     }
 

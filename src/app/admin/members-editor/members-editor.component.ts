@@ -94,7 +94,7 @@ export class MembersEditorComponent implements OnInit {
         /** No need to include Content-Type in Angular 4 */
         headers.append('Content-Type', 'multipart/form-data');
         headers.append('Accept', 'application/json');
-        this.http.post(`http://' + urlStr + '/backend.php?action=uploadImage&type=member`, formData)
+        this.http.post('http://' + urlStr + '/backend.php?action=uploadImage&type=member', formData)
             .subscribe(
                 data => { 
                   console.log('upload success');
