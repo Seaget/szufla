@@ -1,21 +1,22 @@
-<div class="article-wrapper">
-  <div class="article-image-wrapper">
-    <a href="#">
-      <img class="article-image" src="{{ cover }}">
-    </a>
-  </div>
-  <div class="article-content-wrapper">
-    <div class="article-date">
-      {{ date }}
+<div class="ui divided items">
+  <div class="ui item">
+    <div class="image">
+      <img src="{{ cover }}">
     </div>
-    <div class="article-title">
-      {{ title }}
+    <div class="content">
+      <a class="ui header">{{ title }}</a>
+      <div class="ui meta">
+        <span class="ui cinema">{{ date }}</span>
+      </div>
+      <div class="ui description">
+        <p>{{ description }}</p>
+      </div>
+      <div class="ui extra">
+        <div class="ui right floated primary button">
+          Tovább
+          <i class="ui right chevron icon"></i>
+        </div>
+      </div>
     </div>
-    <div class="article-description">
-      {{ description }}
-    </div>
-  </div>
-  <div class="article-read">
-    <a class="article-read-button" [routerLink]="['/article/' + id]">Tovább ></a>
   </div>
 </div>

@@ -9,6 +9,9 @@
     </div>
 </div>
 -->
+
+
+<!--
 <div class="news-main-container">
   <div class="news-container-wrapper">
     
@@ -17,4 +20,12 @@
       </ng-container>
 
   </div>
+</div>
+
+-->
+
+<div class="news-main-container">
+      <ng-container *ngFor="let item of news">
+          <app-news-article-item id="{{ item.id }}" cover="{{ item.cover }}" title="{{ item.title }}" description="{{ item.description }}" date="{{ item.date }}"></app-news-article-item> 
+      </ng-container>
 </div>

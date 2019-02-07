@@ -1,3 +1,5 @@
+/*
+
 .article-wrapper {
     width: 275px;
     height: 500px;
@@ -78,8 +80,9 @@
 .article-read-button:hover {
     color: white;
 }
-
+*/
 /* vertical menu */
+/*
 @media only screen and (max-width: 850px) {
     .article-wrapper {
         width: 95%;
@@ -120,4 +123,86 @@
     .article-description {
         text-align: center;
     }
+}
+
+*/
+
+
+.ui.divided.items>.item:first-child {
+    border-top: none;
+    margin-top: 0!important;
+    padding-top: 0!important;
+}
+.ui.divided.items>.item {
+    border-top: 1px solid rgba(34,36,38,.15);
+    margin: 0;
+    padding: 1em 0;
+}
+.ui.items>.item:first-child {
+    margin-top: 0;
+}
+.ui.items>.item {
+    font-size: 1em;
+}
+.ui.items>.item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 1em 0;
+    width: 100%;
+    min-height: 0;
+    background: 0 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: -webkit-box-shadow .1s ease;
+    transition: -webkit-box-shadow .1s ease;
+    transition: box-shadow .1s ease;
+    transition: box-shadow .1s ease,-webkit-box-shadow .1s ease;
+    z-index: '';
+}
+*, :after, :before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+.ui.items>.item>.image:not(.ui) {
+    width: 175px;
+}
+.ui.items>.item>.image {
+    position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    display: block;
+    float: none;
+    margin: 0;
+    padding: 0;
+    max-height: '';
+    -ms-flex-item-align: top;
+    align-self: top;
+}
+.ui.items>.item>.image+.content {
+    min-width: 0;
+    width: auto;
+    display: block;
+    margin-left: 0;
+    -ms-flex-item-align: top;
+    align-self: top;
+    padding-left: 1.5em;
+}
+.ui.items>.item>.content {
+    display: block;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    background: 0 0;
+    margin: 0;
+    padding: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-size: 1em;
+    border: none;
+    border-radius: 0;
 }

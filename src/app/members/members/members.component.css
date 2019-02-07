@@ -60,7 +60,7 @@ a {
     height: 88vh;
     z-index: -1;
     opacity: 0.05;
-    background: url('https://cdn.pixabay.com/photo/2017/03/05/19/52/grass-2119587_960_720.jpg');
+    background: url('../../../assets/images/grass.jpg');
     background-repeat: no-repeat;
     background-position: 50% 50%;
     -ms-background-size: cover;
