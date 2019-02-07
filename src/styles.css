@@ -45,3 +45,8 @@ body {
         font-size: 17px;
     }
 }
+
+.mainLoading {
+    width: 100%;
+    text-align: center;
+}
