@@ -1,4 +1,4 @@
-<div class="ui divided items">
+<div id="cont" class="ui items">
   <div class="ui item">
     <div class="image">
       <img src="{{ cover }}">
@@ -12,9 +12,8 @@
         <p>{{ description }}</p>
       </div>
       <div class="ui extra">
-        <div class="ui right floated primary button">
-          Tovább
-          <i class="ui right chevron icon"></i>
+        <div class="ui right floated yellow button">
+          <a [routerLink]="['/article/' + id]">Tovább ></a>
         </div>
       </div>
     </div>

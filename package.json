@@ -41,7 +41,8 @@
     "typescript": "^2.3.3",
     "zone.js": "^0.8.14",
     "ts-md5": "^1.2.2",
-    "ng-pick-datetime": "~5.0.0-beta.6"
+    "ng-pick-datetime": "~5.0.0-beta.6",
+    "semantic-ui": "^2.4.2"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.38",

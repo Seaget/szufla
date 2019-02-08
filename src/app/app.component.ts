@@ -16,5 +16,5 @@ export class AppComponent {
 }
 
 
-//export var urlStr:string = "ultimateszeged.hu";
-export var urlStr:string = "localhost";
+export var urlStr:string = "ultimateszeged.hu";
+//export var urlStr:string = "localhost";
