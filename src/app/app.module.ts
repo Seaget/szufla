@@ -59,6 +59,7 @@ import { DiscoverComponent } from './events/discover/discover.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsEditorComponent } from './admin/news-editor/news-editor.component';
 import { AdminComponent } from './admin/admin.component';
+import { AdminsEditorComponent } from './admin/admins-editor/admins-editor.component';
 
 // Import Angular plugin.
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
@@ -71,6 +72,7 @@ import { MembersListComponent } from './admin/members-list/members-list.componen
 import { MembersEditorComponent } from './admin/members-editor/members-editor.component';
 import { EventsListComponent } from './admin/events-list/events-list.component';
 import { EventsEditorComponent } from './admin/events-editor/events-editor.component';
+import { AdminsListComponent } from './admin/admins-list/admins-list.component';
 
 import { LoginAccessGuard } from './LoginAccessGuard';
 import { UserService } from './UserService';
@@ -125,12 +127,14 @@ const routes: Routes = [
   },
   { path: 'contact',        component: ContactComponent },
   { path: 'admin',          component: AdminComponent, canActivate: [LoginAccessGuard] },
-  { path: 'admin/newsEditor/:newsID',component: NewsEditorComponent },
   { path: 'newsList',       component: NewsListComponent },
+  { path: 'admin/newsEditor/:newsID',component: NewsEditorComponent },
   { path: 'membersList',    component: MembersListComponent },
   { path: 'admin/membersEditor/:memberID',component: MembersEditorComponent },
-  { path: 'eventsList',       component: EventsListComponent },
+  { path: 'eventsList',     component: EventsListComponent },
   { path: 'admin/eventEditor/:eventID',component: EventsEditorComponent },
+  { path: 'adminsList',     component: AdminsListComponent },
+  { path: 'admin/adminEditor/:adminID',component: AdminsEditorComponent },
   { path: 'login',          component: LoginComponent }
 ];
 
@@ -193,6 +197,8 @@ export class SafeHtmlPipe implements PipeTransform  {
     MembersEditorComponent,
     EventsListComponent,
     EventsEditorComponent,
+    AdminsListComponent,
+    AdminsEditorComponent,
     LoginComponent
   ],
   imports: [

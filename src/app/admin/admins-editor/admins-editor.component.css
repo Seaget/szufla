@@ -1,0 +1,17 @@
+.container {
+    max-width: 1500px;
+    margin: 20px auto 50px;
+    padding: 0px 20px;
+}
+
+.profileLabel {
+    vertical-align: top;
+}
+
+.profileImage {
+    max-height: 150px;
+}
+
+#saveSuccess, #saveWarning {
+    display: none;
+}

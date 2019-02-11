@@ -1,0 +1,57 @@
+<app-header-menu></app-header-menu>
+<div class="menuTitle">
+  Adminszerkesztő
+</div>
+
+<div class="container">
+  <div class="ui divided selection list">
+    <div class="item">
+      <div class="ui red horizontal label">ID</div>
+      <div class="ui horizontal label">{{ adminID }}</div>
+    </div>
+    <a class="item">
+      <div class="ui purple horizontal label">Teljes Név</div>
+      <div class="ui input">
+        <input [(ngModel)]="adminName" placeholder="Név..." >
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Azonosító</div>
+      <div class="ui input">
+        <input type="text" [(ngModel)]="adminUserName" placeholder="Azonosító...">
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Jelszó</div>
+      <div class="ui input">
+        <input type="text" [(ngModel)]="pwd" placeholder="jelszó...">
+      </div>
+    </a>
+    <a class="item">
+      <div class="ui purple horizontal label">Megerősítés</div>
+      <div class="ui input">
+        <input type="text" [(ngModel)]="pwdCheck" placeholder="Megerősítés...">
+      </div>
+    </a>
+  </div>
+
+  <div id="saveSuccess" class="ui positive message">
+    <i class="close icon" (click)="closeSaveDialog()"></i>
+    <div class="header">
+      Az admin mentése megtörtént.
+    </div>
+  </div>
+
+  <div id="saveWarning" class="ui yellow message">
+    <i class="close icon" (click)="closeWarningDialog()"></i>
+    <div class="header">
+      Töltsd ki a név mezőt!
+    </div>
+  </div>
+
+  <div class="ui buttons">
+    <button class="ui positive button" (click)="saveAdmin()">Mentés</button>
+    <div class="or" data-text="vs"></div>
+    <a [routerLink]="['/adminsList']"><button class="ui button">Vissza</button></a>
+  </div>
+</div>
