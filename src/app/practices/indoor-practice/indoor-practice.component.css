@@ -191,3 +191,12 @@ agm-map {
         font-size: 12px;
     }
 }
+
+.ui.message, .ui.message:first-child {
+    margin: 1em;
+}
+
+h2.ui.header {
+    margin-left: 1em;
+    margin-top: 1em;
+}
