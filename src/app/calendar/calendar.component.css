@@ -31,11 +31,11 @@ pre {
 .calendarWrapper:before {
     content: ' ';
     display: block;
-    position: absolute;
+    position: fixed;
     left: 0;
-    top: 15em;
+    top: 0;
     width: 100%;
-    height: 88vh;
+    height: 100%;
     z-index: -1;
     opacity: 0.09;
     background: url('https://sluphojo.files.wordpress.com/2010/11/assignment-6-040.jpg');

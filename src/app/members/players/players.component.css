@@ -55,11 +55,11 @@ a {
 .s-members-container:before {
     content: ' ';
     display: block;
-    position: absolute;
+    position: fixed;
     left: 0;
-    top: 15em;
+    top: 0;
     width: 100%;
-    height: 88vh;
+    height: 100%;
     z-index: -1;
     opacity: 0.05;
     background: url('../../../assets/images/grass.jpg');
