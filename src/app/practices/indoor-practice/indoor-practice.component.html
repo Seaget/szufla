@@ -90,15 +90,6 @@
     </div>
   </div>
 
-  <div class="practiceMap">
-    <div>
-      <agm-map [latitude]="lat1" [longitude]="lng2" [zoom]="zoom" [scrollwheel]=false>
-        <agm-marker [latitude]="lat1" [longitude]="lng1"></agm-marker>
-        <agm-marker [latitude]="lat2" [longitude]="lng2"></agm-marker>
-      </agm-map>
-    </div>
-  </div>
-
   <div class="practiceInfo">
     <div class="practiceDetailsContainer">
       <div class="practiceDetails">
@@ -143,6 +134,15 @@
         <div class="bold upper">Ingyenes Próbaedzés</div>
         <div>Próbáld ki az egyik edzéshelyszínen az 1 hónapos, INGYENES PRÓBAEDZÉSÜNKET!</div>
       </div>
+    </div>
+  </div>
+  
+  <div class="practiceMap">
+    <div>
+      <agm-map [latitude]="lat1" [longitude]="lng2" [zoom]="zoom" [scrollwheel]=false>
+        <agm-marker [latitude]="lat1" [longitude]="lng1"></agm-marker>
+        <agm-marker [latitude]="lat2" [longitude]="lng2"></agm-marker>
+      </agm-map>
     </div>
   </div>
 </div>

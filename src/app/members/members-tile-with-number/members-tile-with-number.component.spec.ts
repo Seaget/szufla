@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { ShortMembersDataComponent } from './short-members-data.component';
+import { MembersTileWithNumberComponent } from './members-tile-with-number.component';
 
-describe('ShortMembersDataComponent', () => {
-  let component: ShortMembersDataComponent;
-  let fixture: ComponentFixture<ShortMembersDataComponent>;
+describe('MembersTileWithNumberComponent', () => {
+  let component: MembersTileWithNumberComponent;
+  let fixture: ComponentFixture<MembersTileWithNumberComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShortMembersDataComponent ]
+      declarations: [ MembersTileWithNumberComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShortMembersDataComponent);
+    fixture = TestBed.createComponent(MembersTileWithNumberComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

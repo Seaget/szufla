@@ -5,12 +5,12 @@
   
   <div class="s-members-container">
       <div class="s-members">
-        <app-short-members-data *ngFor="let player of playersData" 
+        <app-members-tile-with-number *ngFor="let player of playersData" 
           [name]="player.name" 
           [position]="player.position" 
           [number]="player.number" 
           [img_src]="player.profilePicName">
-        </app-short-members-data>
+        </app-members-tile-with-number>
       </div>
   </div>
 

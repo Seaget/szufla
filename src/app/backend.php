@@ -10,7 +10,7 @@ class mySQLDatabaseManager {
     private $charset        = 'utf8';
 
     public function init() {
-//        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Origin: *');
         $this->pdo = new PDO('mysql:host=c057um.forpsi.com;dbname=b3764;charset=utf8', 'b3764', '23@KCu5B');
     }
 

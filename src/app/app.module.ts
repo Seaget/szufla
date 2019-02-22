@@ -17,7 +17,6 @@ import { ShortTeamMembersComponent } from './startPage/short-team-members/short-
 import { ShortEventsComponent } from './startPage/short-events/short-events.component';
 import { ShortGaleryComponent } from './startPage/short-galery/short-galery.component';
 import { ShortContactsComponent } from './startPage/short-contacts/short-contacts.component';
-import { ShortMembersDataComponent } from './startPage/short-members-data/short-members-data.component';
 import { IndoorPracticeComponent } from './practices/indoor-practice/indoor-practice.component';
 import { OutdoorPracticeComponent } from './practices/outdoor-practice/outdoor-practice.component';
 import { ContactComponent } from './contact/contact.component';
@@ -29,7 +28,8 @@ import { MemberControllerComponent } from './members/memberController/memberCont
 import { MembersComponent } from './members/members/members.component';
 import { PlayersComponent } from './members/players/players.component';
 import { ManagersComponent } from './members/managers/managers.component';
-import { ShortManagersDataComponent } from './members/short-managers-data/short-managers-data.component';
+import { MembersTileComponent } from './members/members-tile/members-tile.component';
+import { MembersTileWithNumberComponent} from './members/members-tile-with-number/members-tile-with-number.component';
 import { NewsArticleItemComponent } from './news/news-article-item/news-article-item.component';
 import { NewsSzaub3Component } from './news/news-szaub3/news-szaub3.component';
 import { NewsSulifrizbi4Component } from './news/news-sulifrizbi4/news-sulifrizbi4.component';
@@ -157,7 +157,7 @@ export class SafeHtmlPipe implements PipeTransform  {
     ShortEventsComponent,
     ShortGaleryComponent,
     ShortContactsComponent,
-    ShortMembersDataComponent,
+    MembersTileComponent,
     IndoorPracticeComponent,
     OutdoorPracticeComponent,
     ContactComponent,
@@ -168,7 +168,7 @@ export class SafeHtmlPipe implements PipeTransform  {
     MembersComponent,
     PlayersComponent,
     ManagersComponent,
-    ShortManagersDataComponent,
+    MembersTileWithNumberComponent,
     NewsArticleItemComponent,
     NewsSzaub3Component,
     NewsSulifrizbi4Component,

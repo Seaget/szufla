@@ -4,10 +4,10 @@
 
 <div class="s-members-container">
     <div class="s-members">
-      <app-short-managers-data *ngFor="let manager of managersData" 
+      <app-members-tile *ngFor="let manager of managersData" 
         [name]="manager.name" 
         [position]="manager.management" 
         [img_src]="manager.profilePicName">
-      </app-short-managers-data>
+      </app-members-tile>
     </div>
 </div>
